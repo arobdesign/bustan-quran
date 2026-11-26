@@ -26,6 +26,25 @@ Aplikasi Android & iOS (satu kode Kotlin Multiplatform) offline-first untuk anak
 
 Catatan: file dokumen di folder ini adalah salinan per 25 Nov 2026 (versi Android & iOS). Bila PRD online diubah, ekspor ulang.
 
+## Kredit & lisensi
+
+Konten Qur'an di `content.db` berasal dari **eQuran.id API v2**
+(`https://equran.id/apidev/v2`), yang menyediakan teks Uthmani & terjemahan
+Kemenag — bebas dipakai **dengan atribusi**. Baris atribusi juga disimpan di
+tabel `source` dan `meta` di dalam `content.db` (`content_source`,
+`audio_reciter`, `audio_template`), sehingga terbaca langsung oleh aplikasi.
+
+| Aset | Sumber | Ketentuan |
+| --- | --- | --- |
+| Teks Arab (Uthmani) & terjemahan Indonesia | eQuran.id (Kemenag) | Bebas pakai dengan atribusi — https://equran.id |
+| Murottal per ayat (MP3) | Misyari Rasyid Al-Afasi, `cdn.equran.id` | Streaming dari CDN eQuran.id; hak rekaman milik qari/penyedia |
+| Font Baloo 2, Baloo Bhaijaan 2, Nunito, Amiri Quran | Google Fonts | SIL Open Font License 1.1 — salinan di `android-app/core/ui/licenses/` |
+| Desain UI 71 layar | Proyek ini (`design/`) | Lihat `design/README.md` |
+
+Kode aplikasi belum diberi berkas lisensi (`LICENSE`), sehingga secara default
+berlaku hak cipta penuh pemilik repo. Tambahkan lisensi bila ingin orang lain
+boleh memakai ulang kodenya.
+
 ## Struktur & cara jalan
 
 | Folder | Isi |
