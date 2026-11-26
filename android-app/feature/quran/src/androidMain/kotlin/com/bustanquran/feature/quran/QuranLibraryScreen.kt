@@ -8,11 +8,9 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -48,8 +46,6 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bustanquran.core.data.repository.ContentRepository
-import com.bustanquran.core.ui.components.BottomNav
-import com.bustanquran.core.ui.components.BottomNavDestination
 import com.bustanquran.core.ui.components.BustanFilterChip
 import com.bustanquran.core.ui.components.BustanIcons
 import com.bustanquran.core.ui.components.BustanStatusBadge
@@ -132,7 +128,6 @@ fun QuranLibraryScreen(
     onSurahSelected: (Int) -> Unit = {},
     onBackClicked: () -> Unit = {},
     onHafalanMapClicked: () -> Unit = {},
-    onNavigateToRoute: (String) -> Unit = {},
     viewModel: QuranLibraryViewModel = koinViewModel(),
 ) {
     val surahs by viewModel.surahs.collectAsState()
@@ -140,7 +135,6 @@ fun QuranLibraryScreen(
         surahs = surahs,
         onSurahSelected = onSurahSelected,
         onHafalanMapClicked = onHafalanMapClicked,
-        onNavigateToRoute = onNavigateToRoute,
     )
 }
 
@@ -149,7 +143,6 @@ fun QuranLibraryContent(
     surahs: List<SurahListItem>,
     onSurahSelected: (Int) -> Unit = {},
     onHafalanMapClicked: () -> Unit = {},
-    onNavigateToRoute: (String) -> Unit = {},
 ) {
     var query by remember { mutableStateOf("") }
     var tab by remember { mutableIntStateOf(0) }
@@ -276,12 +269,6 @@ fun QuranLibraryContent(
                 }
             }
         }
-
-        Spacer(Modifier.height(8.dp))
-        BottomNav(
-            currentRoute = BottomNavDestination.QURAN.route,
-            onNavigateToRoute = onNavigateToRoute,
-        )
     }
 }
 

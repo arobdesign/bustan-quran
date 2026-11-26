@@ -260,7 +260,6 @@ fun BustanQuranNavHost(
                 },
                 onBackClicked = { navController.popBackStack() },
                 onHafalanMapClicked = { navController.navigate(BustanQuranDestinations.HAFALAN_MAP) },
-                onNavigateToRoute = { route -> navController.navigate(route) }
             )
         }
         composable(BustanQuranDestinations.MUSHAF_PAGE) {
