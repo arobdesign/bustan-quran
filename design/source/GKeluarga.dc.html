@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Family Challenge game</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Amiri+Quran&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FBF6EC; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 14px; padding: 48px 18px 28px">
+  <div style="display: flex; align-items: center; justify-content: space-between">
+    <a href="GameList.dc.html" aria-label="Back" style="width: 48px; height: 48px; border-radius: 16px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 #EADFC8"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></a>
+    <span style="font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800">Family Challenge</span>
+    <span style="width: 48px"></span>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+    <div style="border-radius: 20px; padding: 12px; background: {{ kidBg }}; color: {{ kidInk }}; display: flex; flex-direction: column; align-items: center"><span style="font-size: 14px; font-weight: 800">Yusuf</span><span style="font-family: 'Baloo 2', sans-serif; font-size: 34px; font-weight: 800; line-height: 1.1">{{ kid }}</span></div>
+    <div style="border-radius: 20px; padding: 12px; background: {{ parBg }}; color: {{ parInk }}; display: flex; flex-direction: column; align-items: center"><span style="font-size: 14px; font-weight: 800">Mama</span><span style="font-family: 'Baloo 2', sans-serif; font-size: 34px; font-weight: 800; line-height: 1.1">{{ par }}</span></div>
+  </div>
+  <div style="background: #FFFFFF; border-radius: 24px; padding: 18px 16px; display: flex; flex-direction: column; align-items: center; gap: 10px; box-shadow: 0 3px 0 #EADFC8">
+    <span style="font-size: 13px; font-weight: 800; color: #5B6661">Surah Quraysh · round {{ round }} of 4</span>
+    <p dir="rtl" lang="ar" style="margin: 0; font-family: 'Amiri Quran', serif; font-size: 30px; line-height: 1.8; text-align: center">{{ ayah }}</p>
+    <span style="font-size: 17px; font-weight: 800; text-align: center">{{ turnText }}</span>
+  </div>
+  <div style="flex-grow: 1"></div>
+  <p style="margin: 0; text-align: center; font-size: 13px; font-weight: 700; color: #5B6661">Pass the phone. The other player listens and decides.</p>
+  <div style="display: flex; gap: 10px">
+    <button type="button" onClick="{{ miss }}" style="flex: 1; min-height: 60px; border-radius: 999px; border: 2px solid #E0734F; background: #FFFFFF; color: #B4532F; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; cursor: pointer">Try again</button>
+    <button type="button" onClick="{{ hit }}" style="flex: 1; min-height: 60px; border-radius: 999px; border: none; background: #0F6B5C; color: #FFFFFF; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; cursor: pointer">Correct!</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { r: 0, kid: 0, par: 0, kidTurn: true }; }
+renderVals() {
+const s = this.state;
+const ayat = ['لِإِيلَافِ قُرَيْشٍ', 'إِيلَافِهِمْ رِحْلَةَ الشِّتَاءِ وَالصَّيْفِ', 'فَلْيَعْبُدُوا رَبَّ هَٰذَا الْبَيْتِ', 'الَّذِي أَطْعَمَهُم مِّن جُوعٍ وَآمَنَهُم مِّنْ خَوْفٍ'];
+const next = () => ({ r: (s.r + 1) % 4, kidTurn: !s.kidTurn });
+return {
+round: s.r + 1,
+ayah: ayat[s.r],
+turnText: s.kidTurn ? "Yusuf's turn: recite the next ayah!" : "Mama's turn: recite the next ayah!",
+kid: s.kid, par: s.par,
+kidBg: s.kidTurn ? '#0F6B5C' : '#FFFFFF', kidInk: s.kidTurn ? '#FFFFFF' : '#23302C',
+parBg: s.kidTurn ? '#FFFFFF' : '#0F6B5C', parInk: s.kidTurn ? '#23302C' : '#FFFFFF',
+hit: () => this.setState(Object.assign(next(), s.kidTurn ? { kid: s.kid + 1 } : { par: s.par + 1 })),
+miss: () => this.setState(next())
+};
+}
+}
+</script>
+</body>
+</html>

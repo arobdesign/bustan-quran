@@ -1,0 +1,5 @@
+<resources>
+    <string name="nav_map">Karte</string>
+    <string name="nav_quran">Koran</string>
+    <string name="nav_cards">Meine Karten</string>
+</resources>

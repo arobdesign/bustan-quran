@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Welcome and choose language</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Baloo+Bhaijaan+2:wght@600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #0F6B5C; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; position: relative; overflow: hidden">
+  <div aria-hidden="true" style="position: absolute; width: 360px; height: 360px; border-radius: 50%; background: #13806E; top: -120px; left: -80px"></div>
+  <div aria-hidden="true" style="position: absolute; width: 14px; height: 14px; border-radius: 50%; background: #F2B33D; top: 90px; right: 60px"></div>
+  <div aria-hidden="true" style="position: absolute; width: 8px; height: 8px; border-radius: 50%; background: #FCE7B8; top: 150px; right: 110px"></div>
+
+  <div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 96px 24px 32px; color: #FFFFFF">
+    <svg width="120" height="110" viewBox="0 0 84 84" role="img" aria-label="Hud-hud the guide bird">
+      <ellipse cx="42" cy="52" rx="26" ry="24" fill="#E2A54B"></ellipse>
+      <path d="M30 26 L26 10 L36 22 L40 6 L44 22 L54 10 L50 26" fill="#E0734F"></path>
+      <circle cx="34" cy="46" r="6" fill="#FFFFFF"></circle><circle cx="34" cy="46" r="3" fill="#23302C"></circle>
+      <circle cx="50" cy="46" r="6" fill="#FFFFFF"></circle><circle cx="50" cy="46" r="3" fill="#23302C"></circle>
+      <path d="M42 52 L60 56 L42 58 Z" fill="#23302C"></path>
+    </svg>
+    <h1 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-size: 32px; font-weight: 800; line-height: 1.1; text-align: center">Learn the Qur'an through play</h1>
+    <p style="margin: 0; font-size: 16px; font-weight: 600; text-align: center; color: #DCEFE9">Letters, short surahs and memorisation for ages 3 to 10. No ads, works offline.</p>
+  </div>
+
+  <div style="flex-grow: 1; background: #FBF6EC; border-radius: 32px 32px 0 0; padding: 24px 20px 28px; display: flex; flex-direction: column; gap: 12px; position: relative">
+    <span style="font-size: 15px; font-weight: 800">Choose the app language</span>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+      <button type="button" aria-pressed="true" style="min-height: 56px; border-radius: 16px; border: 3px solid #0F6B5C; background: #FFFFFF; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; color: #23302C; cursor: pointer">English</button>
+      <button type="button" aria-pressed="false" lang="ar" style="min-height: 56px; border-radius: 16px; border: 2px solid #E3D8C1; background: #FFFFFF; font-family: 'Baloo Bhaijaan 2', sans-serif; font-size: 18px; font-weight: 700; color: #23302C; cursor: pointer">العربية</button>
+      <button type="button" aria-pressed="false" lang="fr" style="min-height: 56px; border-radius: 16px; border: 2px solid #E3D8C1; background: #FFFFFF; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; color: #23302C; cursor: pointer">Français</button>
+      <button type="button" aria-pressed="false" lang="de" style="min-height: 56px; border-radius: 16px; border: 2px solid #E3D8C1; background: #FFFFFF; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; color: #23302C; cursor: pointer">Deutsch</button>
+    </div>
+    <p style="margin: 0; font-size: 13px; font-weight: 600; color: #5B6661">Türkçe, Nederlands, اردو, Bahasa Indonesia and Melayu are coming soon.</p>
+    <div style="flex-grow: 1"></div>
+    <a href="ParentGate.dc.html" style="min-height: 56px; border-radius: 999px; background: #0F6B5C; color: #FFFFFF; font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; display: flex; align-items: center; justify-content: center; text-decoration: none">Get started</a>
+    <a href="SignIn.dc.html" style="text-align: center; font-size: 14px; font-weight: 800; min-height: 44px; display: flex; align-items: center; justify-content: center">I already have an account</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

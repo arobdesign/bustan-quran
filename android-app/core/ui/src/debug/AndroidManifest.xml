@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+      Debug-only entry point for the P-18 design catalog. The manifest lives in
+      the debug source set, so the activity is merged into debug builds only and
+      can never be reached from a release APK.
+    -->
+    <application>
+        <activity
+            android:name="com.bustanquran.core.ui.catalog.DesignCatalogActivity"
+            android:exported="true"
+            android:label="Design catalog"
+            android:theme="@android:style/Theme.Material.Light.NoActionBar" />
+    </application>
+
+</manifest>

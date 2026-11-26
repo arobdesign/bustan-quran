@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bustan Qur’an</string>
+    <string name="loading_bismillah">Bismillah… préparation de tes leçons</string>
+    <string name="onboarding_title">Apprends le Coran en jouant</string>
+    <string name="onboarding_subtitle">Lettres, sourates courtes et mémorisation de 3 à 10 ans. Sans publicité, fonctionne hors ligne.</string>
+    <string name="onboarding_choose_language">Choisis la langue de l’application</string>
+    <string name="onboarding_coming_soon">Le turc, le néerlandais, l’ourdou, l’indonésien et le malais arrivent bientôt.</string>
+    <string name="onboarding_get_started">Commencer</string>
+    <string name="onboarding_have_account">J’ai déjà un compte</string>
+    <string name="parent_gate_title">Réservé aux adultes</string>
+    <string name="parent_gate_subtitle">Réponds pour ouvrir les réglages, les rapports de progrès et les achats.</string>
+    <string name="parent_gate_wrong">Pas tout à fait. Voici une nouvelle question.</string>
+    <string name="parent_gate_footnote">La question est écrite en mots pour que les jeunes enfants ne puissent pas la deviner. Une nouvelle apparaît à chaque fois.</string>
+    <string name="main_who_is_learning">Qui apprend aujourd’hui ?</string>
+    <string name="main_add_child">Ajouter un enfant</string>
+    <string name="main_for_parents">Pour les parents</string>
+    <string name="main_footnote">Sans publicité · Hors ligne · Adapté aux enfants</string>
+    <string name="tier_little_stars">Petites étoiles · 4</string>
+    <string name="tier_explorers">Explorateurs · 5</string>
+    <string name="tier_young_hafiz">Jeune hâfiz · 7</string>
+</resources>

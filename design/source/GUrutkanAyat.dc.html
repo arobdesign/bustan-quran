@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Order the Ayat game</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Amiri+Quran&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FBF6EC; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 14px; padding: 48px 18px 28px">
+  <div style="display: flex; align-items: center; justify-content: space-between">
+    <a href="GameList.dc.html" aria-label="Back" style="width: 48px; height: 48px; border-radius: 16px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 #EADFC8"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></a>
+    <div style="display: flex; flex-direction: column; align-items: center"><span style="font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; line-height: 1.1">Order the Ayat</span><span style="font-size: 12px; font-weight: 700; color: #5B6661">Al-Kawthar</span></div>
+    <span style="width: 48px"></span>
+  </div>
+  <p style="margin: 0; font-size: 16px; font-weight: 800; text-align: center">Tap the ayat from first to last</p>
+  <sc-for list="{{ cards }}" as="c" hint-placeholder-count="3">
+    <button type="button" onClick="{{ c.tap }}" style="display: flex; align-items: center; gap: 12px; min-height: 96px; border-radius: 20px; border: {{ c.border }}; background: {{ c.bg }}; padding: 10px 14px; cursor: pointer; font-family: 'Nunito', sans-serif; color: #23302C">
+      <span style="width: 44px; height: 44px; border-radius: 50%; border: 2.5px dashed #C98A12; background: {{ c.badgeBg }}; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; color: #FFFFFF; flex-shrink: 0">{{ c.badge }}</span>
+      <span dir="rtl" lang="ar" style="flex-grow: 1; font-family: 'Amiri Quran', serif; font-size: 25px; line-height: 1.8; text-align: right">{{ c.ar }}</span>
+    </button>
+  </sc-for>
+  <p style="margin: 0; text-align: center; font-size: 14px; font-weight: 800; color: #4F5A55">{{ msg }}</p>
+  <div style="flex-grow: 1"></div>
+  <button type="button" onClick="{{ reset }}" style="min-height: 52px; border-radius: 999px; border: 2px solid #0F6B5C; background: #FFFFFF; color: #0F6B5C; font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 800; cursor: pointer">Start again</button>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { picked: [], wrong: false }; }
+renderVals() {
+const s = this.state;
+const ayat = [{ ar: 'إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ', n: 3 }, { ar: 'إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ', n: 1 }, { ar: 'فَصَلِّ لِرَبِّكَ وَانْحَرْ', n: 2 }];
+const done = s.picked.length === 3;
+return {
+msg: done ? 'MashaAllah! The order is right.' : (s.wrong ? 'Not yet. Which ayah comes ' + (s.picked.length === 0 ? 'first' : 'next') + '?' : ''),
+reset: () => this.setState({ picked: [], wrong: false }),
+cards: ayat.map((a, i) => {
+const idx = s.picked.indexOf(i);
+return {
+ar: a.ar,
+badge: idx === -1 ? '' : String(idx + 1),
+badgeBg: idx === -1 ? 'transparent' : '#0F6B5C',
+border: idx === -1 ? '2px solid #E3D8C1' : '3px solid #0F6B5C',
+bg: idx === -1 ? '#FFFFFF' : '#DCEFE9',
+tap: () => { if (idx !== -1) return; if (a.n === s.picked.length + 1) this.setState({ picked: s.picked.concat([i]), wrong: false }); else this.setState({ wrong: true }); }
+};
+})
+};
+}
+}
+</script>
+</body>
+</html>

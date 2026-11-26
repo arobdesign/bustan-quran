@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bustan Qur’an</string>
+    <string name="loading_bismillah">Bismillah… deine Lektionen werden vorbereitet</string>
+    <string name="onboarding_title">Lerne den Koran beim Spielen</string>
+    <string name="onboarding_subtitle">Buchstaben, kurze Suren und Auswendiglernen für 3 bis 10 Jahre. Keine Werbung, funktioniert offline.</string>
+    <string name="onboarding_choose_language">Wähle die App-Sprache</string>
+    <string name="onboarding_coming_soon">Türkisch, Niederländisch, Urdu, Indonesisch und Malaiisch folgen bald.</string>
+    <string name="onboarding_get_started">Los geht’s</string>
+    <string name="onboarding_have_account">Ich habe bereits ein Konto</string>
+    <string name="parent_gate_title">Nur für Erwachsene</string>
+    <string name="parent_gate_subtitle">Antworte, um Einstellungen, Fortschrittsberichte und Käufe zu öffnen.</string>
+    <string name="parent_gate_wrong">Nicht ganz. Hier ist eine neue Frage.</string>
+    <string name="parent_gate_footnote">Die Frage ist in Worten geschrieben, damit kleine Kinder sie nicht erraten können. Jedes Mal erscheint eine neue.</string>
+    <string name="main_who_is_learning">Wer lernt heute?</string>
+    <string name="main_add_child">Kind hinzufügen</string>
+    <string name="main_for_parents">Für Eltern</string>
+    <string name="main_footnote">Keine Werbung · Offline · Kindersicher</string>
+    <string name="tier_little_stars">Kleine Sterne · 4</string>
+    <string name="tier_explorers">Entdecker · 5</string>
+    <string name="tier_young_hafiz">Junger Hafiz · 7</string>
+</resources>

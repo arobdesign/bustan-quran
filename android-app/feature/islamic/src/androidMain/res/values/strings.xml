@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Artboard 17 · Hijaiyah lesson & tracing -->
+    <string name="hijaiyah_lesson_title">Letter %1$d · %2$s</string>
+    <string name="hijaiyah_lesson_subtitle">Qaida lesson 1</string>
+    <string name="hijaiyah_lesson_counter">%1$d / %2$d</string>
+    <string name="hijaiyah_trace_hint">Trace with your finger, starting at the yellow dot</string>
+    <string name="hijaiyah_trace_done">Beautiful — you traced it!</string>
+    <string name="hijaiyah_trace_start">1</string>
+    <string name="hijaiyah_forms_title">%1$s changes shape in a word</string>
+    <string name="hijaiyah_form_isolated">Alone</string>
+    <string name="hijaiyah_form_initial">Start</string>
+    <string name="hijaiyah_form_medial">Middle</string>
+    <string name="hijaiyah_form_final">End</string>
+    <string name="hijaiyah_example_heading">Example word</string>
+    <string name="hijaiyah_hear">Hear %1$s</string>
+    <string name="hijaiyah_say">Say it · record</string>
+    <string name="hijaiyah_next">Next letter</string>
+    <string name="hijaiyah_empty">There are no letters in the content pack yet.</string>
+
+    <!-- Artboard 18 · Tajwid lesson (Qalqalah) -->
+    <string name="tajwid_lesson_badge">Tajwid · rule %1$d of %2$d</string>
+    <string name="tajwid_lesson_tip">Easy to remember: “Qutbu Jad”</string>
+    <string name="tajwid_example_label">Example · stopping at the end of %1$s ayah %2$d</string>
+    <string name="tajwid_example_pending">The example ayah arrives with the full mushaf pack.</string>
+    <string name="tajwid_hear_bounce">Hear the bounce</string>
+    <string name="tajwid_check_title">Quick check: which letter bounces?</string>
+    <string name="tajwid_check_idle">Tap a letter.</string>
+    <string name="tajwid_check_right">Yes! %1$s is one of the 5 bouncing letters.</string>
+    <string name="tajwid_check_wrong">Try again. Look at the 5 letters above.</string>
+    <string name="tajwid_empty">There is no tajwid rule in the content pack yet.</string>
+    <string name="tajwid_desc_ghunnah">A nasal hum. Hold it for two counts when noon or meem carries a shadda or a sukun.</string>
+    <string name="tajwid_desc_idgham_bi">Merging with a hum: noon meets one of ي ن م و and the sound slides into the next letter.</string>
+    <string name="tajwid_desc_idgham_bila">Merging without a hum: noon meets ل or ر and is swallowed completely.</string>
+    <string name="tajwid_desc_iqlab">Flipping: noon followed by ب turns into a meem sound with a hum.</string>
+    <string name="tajwid_desc_ikhfa">Hiding: noon followed by one of fifteen letters is half said, with a hum.</string>
+    <string name="tajwid_desc_izhar">Clear: noon followed by ء ه ع ح غ خ is said plainly, with no hum.</string>
+    <string name="tajwid_desc_qalqalah">The bouncing sound. When these letters have a sukun, the sound bounces a little.</string>
+    <string name="tajwid_desc_madd">Lengthening: stretch the vowel for two to six counts.</string>
+    <string name="tajwid_desc_generic">A tajwid rule from the content pack.</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hafalan_memorise">حفظ · %1$s</string>
+    <string name="hafalan_ayah_of">الآية %1$d من %2$d</string>
+    <string name="hafalan_step_listen">١ · استمع</string>
+    <string name="hafalan_step_repeat">٢ · ردّد</string>
+    <string name="hafalan_step_own">٣ · بنفسي</string>
+    <string name="hafalan_step_progress">%1$d من %2$d</string>
+    <string name="hafalan_step_locked">مقفل</string>
+    <string name="hafalan_reciter">القارئ: صوت طفل</string>
+    <string name="hafalan_speed">السرعة %1$s×</string>
+    <string name="hafalan_repeat">التكرار %1$d×</string>
+    <string name="hafalan_prompt">دورك! اقرأ الآية %1$d بعد القارئ.</string>
+    <string name="hafalan_prev_ayah">الآية السابقة</string>
+    <string name="hafalan_record">سجّل قراءتي</string>
+    <string name="hafalan_play">شغّل القارئ</string>
+    <!-- Artboard 16 · My hafalan -->
+    <string name="hafalan_map_title">حفظي</string>
+    <string name="hafalan_map_review_box">صندوق المراجعة اليوم</string>
+    <string name="hafalan_map_review_count">أُنجز %1$d من %2$d</string>
+    <string name="hafalan_map_task_done">مهمة منجزة</string>
+    <string name="hafalan_map_start">ابدأ ›</string>
+    <string name="hafalan_map_juz_title">جزء عمّ · %1$d سورة</string>
+    <string name="hafalan_map_juz_range">من سورة %1$d إلى %2$d</string>
+    <string name="hafalan_map_legend_memorised">محفوظ</string>
+    <string name="hafalan_map_legend_review">يحتاج مراجعة</string>
+    <string name="hafalan_map_legend_learning">قيد التعلّم</string>
+    <string name="hafalan_map_legend_not_yet">لم يبدأ</string>
+</resources>

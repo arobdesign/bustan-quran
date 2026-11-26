@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Add a child profile</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FBF6EC; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 18px; padding: 48px 20px 28px">
+  <div style="display: flex; align-items: center; gap: 12px">
+    <a href="ParentDashboard.dc.html" aria-label="Back" style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 #EADFC8">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+    </a>
+    <h1 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-size: 24px; font-weight: 800">Add a child</h1>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 8px">
+    <label for="nick" style="font-size: 14px; font-weight: 800">Nickname</label>
+    <input id="nick" type="text" value="Yusuf" style="min-height: 52px; border-radius: 14px; border: 2px solid #E3D8C1; background: #FFFFFF; padding: 0 16px; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 700; color: #23302C">
+    <span style="font-size: 12px; font-weight: 600; color: #5B6661">A nickname is enough. We never ask for a full name.</span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 8px">
+    <span style="font-size: 14px; font-weight: 800">Learning stage</span>
+    <button type="button" aria-pressed="false" style="display: flex; align-items: center; gap: 12px; text-align: left; min-height: 64px; border-radius: 16px; border: 2px solid #E3D8C1; background: #FFFFFF; padding: 10px 14px; font-family: 'Nunito', sans-serif; color: #23302C; cursor: pointer">
+      <span style="width: 40px; height: 40px; border-radius: 12px; background: #FCE7B8; flex-shrink: 0"></span>
+      <span style="display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 800">Little Stars · 3–4</span><span style="font-size: 12px; font-weight: 600; color: #5B6661">Sounds, letters by ear, short surahs</span></span>
+    </button>
+    <button type="button" aria-pressed="false" style="display: flex; align-items: center; gap: 12px; text-align: left; min-height: 64px; border-radius: 16px; border: 2px solid #E3D8C1; background: #FFFFFF; padding: 10px 14px; font-family: 'Nunito', sans-serif; color: #23302C; cursor: pointer">
+      <span style="width: 40px; height: 40px; border-radius: 12px; background: #DCEFE9; flex-shrink: 0"></span>
+      <span style="display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 800">Explorers · 5–6</span><span style="font-size: 12px; font-weight: 600; color: #5B6661">All letters, harakat, Qaida 1–3</span></span>
+    </button>
+    <button type="button" aria-pressed="true" style="display: flex; align-items: center; gap: 12px; text-align: left; min-height: 64px; border-radius: 16px; border: 3px solid #0F6B5C; background: #FFFFFF; padding: 10px 14px; font-family: 'Nunito', sans-serif; color: #23302C; cursor: pointer">
+      <span style="width: 40px; height: 40px; border-radius: 12px; background: #D7E8F5; flex-shrink: 0"></span>
+      <span style="display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 800">Young Hafiz · 7–10</span><span style="font-size: 12px; font-weight: 600; color: #5B6661">Reading, tajwid, memorising Juz 'Amma</span></span>
+    </button>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 8px">
+    <span style="font-size: 14px; font-weight: 800">Pick a buddy</span>
+    <div style="display: flex; gap: 10px">
+      <button type="button" aria-label="Camel" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid #E3D8C1; background: #FCE7B8; cursor: pointer"></button>
+      <button type="button" aria-label="Owl" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid #E3D8C1; background: #DCEFE9; cursor: pointer"></button>
+      <button type="button" aria-label="Hud-hud bird" aria-pressed="true" style="width: 60px; height: 60px; border-radius: 50%; border: 4px solid #0F6B5C; background: #D7E8F5; cursor: pointer"></button>
+      <button type="button" aria-label="Bee" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid #E3D8C1; background: #F7D3C5; cursor: pointer"></button>
+      <button type="button" aria-label="Turtle" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid #E3D8C1; background: #E4E0F3; cursor: pointer"></button>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1"></div>
+  <a href="Main.dc.html" style="min-height: 56px; border-radius: 999px; background: #0F6B5C; color: #FFFFFF; font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; display: flex; align-items: center; justify-content: center; text-decoration: none">Save profile</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

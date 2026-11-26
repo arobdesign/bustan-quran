@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">بستان القرآن</string>
+    <string name="voice_tap_island_letters">جزيرة الحروف</string>
+    <string name="voice_tap_island_surah">جزيرة السور</string>
+    <string name="voice_tap_island_dua">جزيرة الدعاء</string>
+    <string name="voice_tap_island_stories">جزيرة القصص</string>
+    <string name="voice_tap_bottom_map">الخريطة</string>
+    <string name="voice_tap_bottom_quran">القرآن</string>
+    <string name="voice_tap_bottom_cards">بطاقاتي</string>
+</resources>

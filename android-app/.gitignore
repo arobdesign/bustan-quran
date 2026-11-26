@@ -1,0 +1,16 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+*/build
+*.log
+
+# Sensitive credentials & keys
+*.jks
+*.keystore
+google-services.json
+service-account*.json
+*.env
+local.properties

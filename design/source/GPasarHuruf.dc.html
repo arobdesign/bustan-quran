@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Letter Market game</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Amiri:wght@700&amp;family=Amiri+Quran&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6E3C8; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 16px; padding: 48px 18px 28px">
+  <div style="display: flex; align-items: center; justify-content: space-between">
+    <a href="GameList.dc.html" aria-label="Back" style="width: 48px; height: 48px; border-radius: 16px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></a>
+    <span style="font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800">Letter Market</span>
+    <span style="width: 48px"></span>
+  </div>
+  <div style="background: #FFFFFF; border-radius: 22px; padding: 14px 16px; display: flex; flex-direction: column; align-items: center; gap: 8px">
+    <span style="font-size: 15px; font-weight: 800">Shopping list: the name of a surah</span>
+    <span dir="rtl" lang="ar" style="font-family: 'Amiri Quran', serif; font-size: 30px; color: #0F6B5C">قُرَيْش</span>
+  </div>
+  <div dir="rtl" lang="ar" style="display: flex; justify-content: center; gap: 8px">
+    <sc-for list="{{ slots }}" as="s" hint-placeholder-count="4">
+      <span style="width: 70px; height: 80px; border-radius: 16px; border: 3px dashed #C98A12; background: {{ s.bg }}; display: flex; align-items: center; justify-content: center; font-family: 'Amiri', serif; font-size: 44px; font-weight: 700; color: #23302C">{{ s.g }}</span>
+    </sc-for>
+  </div>
+  <div style="background: #C9883A; border-radius: 22px 22px 8px 8px; padding: 10px; display: flex; flex-direction: column; gap: 10px">
+    <div aria-hidden="true" style="height: 18px; border-radius: 10px; background: repeating-linear-gradient(90deg, #E0734F 0 26px, #FFFFFF 26px 52px)"></div>
+    <div dir="rtl" lang="ar" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+      <sc-for list="{{ stall }}" as="t" hint-placeholder-count="6">
+        <button type="button" onClick="{{ t.buy }}" style="min-height: 80px; border-radius: 16px; border: none; background: {{ t.bg }}; font-family: 'Amiri', serif; font-size: 44px; font-weight: 700; color: #23302C; cursor: pointer; opacity: {{ t.op }}">{{ t.g }}</button>
+      </sc-for>
+    </div>
+  </div>
+  <p style="margin: 0; text-align: center; font-size: 14px; font-weight: 800; color: #4F5A55">{{ msg }}</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { got: 0, msg: 'Buy the letters in order, from right to left.' }; }
+renderVals() {
+const s = this.state;
+const need = ['ق', 'ر', 'ي', 'ش'];
+const stall = ['ش', 'ب', 'ق', 'ي', 'م', 'ر'];
+return {
+msg: s.got === 4 ? 'MashaAllah! You spelled Quraysh.' : s.msg,
+slots: need.map((g, i) => ({ g: i < s.got ? g : '', bg: i < s.got ? '#FFFFFF' : 'transparent' })),
+stall: stall.map((g) => {
+const used = need.indexOf(g) !== -1 && need.indexOf(g) < s.got;
+return { g, bg: '#FFF4D6', op: used ? 0.35 : 1, buy: () => {
+if (s.got < 4 && g === need[s.got]) this.setState({ got: s.got + 1, msg: 'Good! Next letter.' });
+else if (s.got < 4) this.setState({ msg: 'Not that one. Look at the shopping list.' });
+} };
+})
+};
+}
+}
+</script>
+</body>
+</html>

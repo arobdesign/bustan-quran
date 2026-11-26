@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Letter Run game</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Amiri:wght@700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FCE7B8; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; position: relative; overflow: hidden">
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 48px 18px 10px">
+    <a href="GameList.dc.html" aria-label="Back" style="width: 48px; height: 48px; border-radius: 16px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></a>
+    <span style="font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800">Letter Run</span>
+    <span style="font-size: 14px; font-weight: 800; background: #FFFFFF; border-radius: 999px; padding: 8px 12px">0:24</span>
+  </div>
+  <div style="margin: 8px 20px 0; background: #FFFFFF; border-radius: 22px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between">
+    <span style="font-size: 17px; font-weight: 800">Jump only on</span>
+    <span lang="ar" style="font-family: 'Amiri', serif; font-size: 50px; font-weight: 700; line-height: 1; color: #0F6B5C">س</span>
+    <span style="font-size: 14px; font-weight: 800; color: #5B6661">Sin</span>
+  </div>
+  <div style="position: relative; flex-grow: 1">
+    <div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 300px; background: #E7B96A"></div>
+    <div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 210px; height: 10px; background: #C9883A"></div>
+    <svg width="86" height="96" viewBox="0 0 84 84" role="img" aria-label="Hud-hud running" style="position: absolute; left: 30px; bottom: 220px">
+      <ellipse cx="42" cy="50" rx="26" ry="22" fill="#E2A54B"></ellipse><path d="M30 28 L26 12 L36 24 L40 8 L44 24 L54 12 L50 28" fill="#E0734F"></path>
+      <circle cx="52" cy="44" r="6" fill="#FFFFFF"></circle><circle cx="54" cy="44" r="3" fill="#23302C"></circle><path d="M62 50 L80 54 L62 57 Z" fill="#23302C"></path>
+      <path d="M34 70 L30 82 M48 70 L52 82" stroke="#23302C" stroke-width="3" stroke-linecap="round"></path>
+    </svg>
+    <div style="position: absolute; left: 140px; right: 12px; bottom: 220px; display: flex; justify-content: space-between; align-items: flex-end">
+      <button type="button" aria-label="Block with Shin" style="width: 66px; height: 66px; border-radius: 14px; border: none; background: #FFFFFF; font-family: 'Amiri', serif; font-size: 40px; font-weight: 700; color: #23302C; cursor: pointer">ش</button>
+      <button type="button" aria-label="Block with Sin" style="width: 66px; height: 66px; border-radius: 14px; border: none; background: #0F6B5C; font-family: 'Amiri', serif; font-size: 40px; font-weight: 700; color: #FFFFFF; cursor: pointer">س</button>
+      <button type="button" aria-label="Block with Sad" style="width: 66px; height: 66px; border-radius: 14px; border: none; background: #FFFFFF; font-family: 'Amiri', serif; font-size: 40px; font-weight: 700; color: #23302C; cursor: pointer">ص</button>
+    </div>
+    <div style="position: absolute; left: 20px; right: 20px; bottom: 40px; display: flex; gap: 12px">
+      <button type="button" style="flex: 1; min-height: 88px; border-radius: 24px; border: none; background: #0F6B5C; color: #FFFFFF; font-family: 'Baloo 2', sans-serif; font-size: 24px; font-weight: 800; cursor: pointer; box-shadow: 0 6px 0 #0A4F44">Jump!</button>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Bustan Qur'an (بستان القرآن) - Desain UI
+71 layar, PNG resolusi 2x (ponsel 780x1688 px, tablet 2388x1668 px).
+Nomor file = nomor layar di PRD bagian 4.
+Teks Arab di desain hanya placeholder; teks final diambil dari sumber terverifikasi.
+Desain interaktif (bisa diklik): https://claude.ai/artifact/3Go3zN69CsHLcX8fqBoSXd

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_title">الألعاب</string>
+    <string name="game_locked">مقفل</string>
+    <string name="game_stage_little_stars">٣–٤ سنوات</string>
+    <string name="game_stage_explorers">٥–٦ سنوات</string>
+    <string name="game_stage_young_hafiz">٧–١٠ سنوات</string>
+    <string name="game_tagline_little_stars">نجوم صغيرة · استمع واضغط وتتبّع</string>
+    <string name="game_tagline_explorers">مستكشفون · صِل الحروف وأول حفظ</string>
+    <string name="game_tagline_young_hafiz">حافظ صغير · ركّب وتابع وافهم</string>
+
+    <string name="g1_name">بالونات الحروف</string>
+    <string name="g1_goal">أصوات الحروف</string>
+    <string name="g2_name">حديقة الحروف</string>
+    <string name="g2_goal">استمع وردّد</string>
+    <string name="g3_name">تتبّع بالإصبع</string>
+    <string name="g3_goal">أشكال الحروف</string>
+    <string name="g4_name">طابق الظل</string>
+    <string name="g4_goal">الحروف المتشابهة</string>
+    <string name="g5_name">قطار السور</string>
+    <string name="g5_goal">سور قصيرة</string>
+    <string name="g6_name">دعاء صغير</string>
+    <string name="g6_goal">أدعية يومية</string>
+    <string name="g7_name">صيد الحركات</string>
+    <string name="g7_goal">فتحة، كسرة، ضمة</string>
+    <string name="g8_name">نجوم الليل</string>
+    <string name="g8_goal">الأرقام العربية</string>
+    <string name="g9_name">صِل الحروف</string>
+    <string name="g9_goal">الأشكال المتصلة</string>
+    <string name="g10_name">سباق الحروف</string>
+    <string name="g10_goal">قراءة سريعة للحروف</string>
+    <string name="g11_name">الكلمة الناقصة</string>
+    <string name="g11_goal">أول حفظ</string>
+    <string name="g12_name">رتّب الآيات</string>
+    <string name="g12_goal">ترتيب الآيات</string>
+    <string name="g13_name">ذاكرة الكلمات</string>
+    <string name="g13_goal">كلمات القرآن</string>
+    <string name="g14_name">قلّد القارئ</string>
+    <string name="g14_goal">التلقّي</string>
+    <string name="g15_name">سوق الحروف</string>
+    <string name="g15_goal">قراءة الكلمات</string>
+    <string name="g16_name">خمّن السورة</string>
+    <string name="g16_goal">تعرّف السور</string>
+    <string name="g17_name">ركّب الآية</string>
+    <string name="g17_goal">الحفظ</string>
+    <string name="g18_name">ركّب المعنى</string>
+    <string name="g18_goal">المعنى</string>
+    <string name="g19_name">محقّق التجويد</string>
+    <string name="g19_goal">التجويد</string>
+    <string name="g20_name">أكمل الآية</string>
+    <string name="g20_goal">المراجعة</string>
+    <string name="g21_name">كويز قصة السورة</string>
+    <string name="g21_goal">التدبّر</string>
+    <string name="g22_name">مغامرة الحفظ</string>
+    <string name="g22_goal">هدف طويل المدى</string>
+    <string name="g23_name">تحدّي العائلة</string>
+    <string name="g23_goal">نتعلّم معًا</string>
+    <string name="g24_name">مسابقة الصف</string>
+    <string name="g24_goal">وضع المعلّم</string>
+
+    <string name="balon_prompt">انقر على حرف «%1$s»</string>
+    <string name="balon_listen_hint">اضغط على السماعة لتسمعه مرة أخرى</string>
+    <string name="balon_level">المستوى %1$d</string>
+    <string name="balon_round">الجولة %1$d من %2$d</string>
+    <string name="balon_mascot_hint">الحرف %1$s له نقطة واحدة تحته. هل تجدها؟</string>
+    <string name="balon_speaker_desc">اسمع الحرف مرة أخرى</string>
+    <string name="balon_balloon_desc">بالون بحرف %1$s</string>
+    <string name="game_susun_title">ركّب الآية</string>
+    <string name="game_susun_subtitle">سورة %1$s · المستوى ١ (مع تلميحات)</string>
+    <string name="game_susun_stage">%1$d/%2$d</string>
+    <string name="game_susun_basmala">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</string>
+    <string name="game_susun_instruction">اسحب الكلمات إلى الآية %1$d</string>
+    <string name="game_susun_wrong">ليست هذه — حاول مرة أخرى</string>
+    <string name="game_susun_correct">هذه هي الآية %1$d. أحسنت!</string>
+    <string name="game_susun_listen">استمع</string>
+    <string name="game_susun_check">تحقّق</string>
+    <string name="game_susun_slot_desc">خانة فارغة لكلمة ناقصة</string>
+    <string name="game_susun_empty">لا توجد آيات في حزمة المحتوى بعد.</string>
+
+    <string name="game_sambung_title">أكمل الآية</string>
+    <string name="game_sambung_subtitle">مراجعة · %1$s</string>
+    <string name="game_sambung_stage">%1$d / %2$d</string>
+    <string name="game_sambung_prompt_label">القارئ يقول…</string>
+    <string name="game_sambung_play_again">اسمعها مرة أخرى</string>
+    <string name="game_sambung_question">ما الآية التالية؟</string>
+    <string name="game_sambung_correct">صحيح! هذه هي الآية %1$d.</string>
+    <string name="game_sambung_wrong">ليست هذه — استمع وحاول مرة أخرى.</string>
+    <string name="game_sambung_next">التالي</string>
+    <string name="game_sambung_option_desc">أكمل بـ %1$s</string>
+    <string name="game_sambung_empty">لا توجد آيات كافية لهذه اللعبة بعد.</string>
+
+
+
+    <string name="reward_title">ما شاء الله، %1$s!</string>
+    <string name="reward_title_generic">ما شاء الله!</string>
+    <string name="reward_default_achievement">أكملت الآية ٣ من سورة الإخلاص</string>
+    <string name="reward_stars_desc">%1$d من %2$d نجمة</string>
+    <string name="reward_new_card">بطاقة جديدة</string>
+    <string name="reward_card_name">الجمل</string>
+    <string name="reward_card_progress">حيوانات في القرآن · ٤ من ١٢</string>
+    <string name="reward_next_ayah">الآية التالية</string>
+    <string name="reward_back_to_map">العودة إلى الخريطة</string>
+</resources>

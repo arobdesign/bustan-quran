@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tafel 17 · Hijaiyah-Lektion -->
+    <string name="hijaiyah_lesson_title">Buchstabe %1$d · %2$s</string>
+    <string name="hijaiyah_lesson_subtitle">Qaida-Lektion 1</string>
+    <string name="hijaiyah_lesson_counter">%1$d / %2$d</string>
+    <string name="hijaiyah_trace_hint">Fahre mit dem Finger nach, startend am gelben Punkt</string>
+    <string name="hijaiyah_trace_done">Wunderbar — nachgefahren!</string>
+    <string name="hijaiyah_trace_start">1</string>
+    <string name="hijaiyah_forms_title">%1$s ändert im Wort seine Form</string>
+    <string name="hijaiyah_form_isolated">Allein</string>
+    <string name="hijaiyah_form_initial">Anfang</string>
+    <string name="hijaiyah_form_medial">Mitte</string>
+    <string name="hijaiyah_form_final">Ende</string>
+    <string name="hijaiyah_example_heading">Beispielwort</string>
+    <string name="hijaiyah_hear">%1$s anhören</string>
+    <string name="hijaiyah_say">Sprich es · aufnehmen</string>
+    <string name="hijaiyah_next">Nächster Buchstabe</string>
+    <string name="hijaiyah_empty">Im Inhalts-Paket sind noch keine Buchstaben enthalten.</string>
+
+    <!-- Tafel 18 · Tajwid-Lektion (Qalqalah) -->
+    <string name="tajwid_lesson_badge">Tajwid · Regel %1$d von %2$d</string>
+    <string name="tajwid_lesson_tip">Leicht zu merken: „Qutbu Dschad“</string>
+    <string name="tajwid_example_label">Beispiel · Halt am Ende von %1$s, Vers %2$d</string>
+    <string name="tajwid_example_pending">Der Beispielvers kommt mit dem vollständigen Mushaf-Paket.</string>
+    <string name="tajwid_hear_bounce">Den Sprung hören</string>
+    <string name="tajwid_check_title">Kurze Prüfung: Welcher Buchstabe springt?</string>
+    <string name="tajwid_check_idle">Tippe einen Buchstaben an.</string>
+    <string name="tajwid_check_right">Ja! %1$s ist einer der 5 springenden Buchstaben.</string>
+    <string name="tajwid_check_wrong">Versuch es noch einmal. Schau auf die 5 Buchstaben oben.</string>
+    <string name="tajwid_empty">Im Inhalts-Paket ist noch keine Tajwid-Regel enthalten.</string>
+    <string name="tajwid_desc_ghunnah">Ein Nasenklang. Halte ihn zwei Zählzeiten, wenn Nun oder Mim eine Schadda oder ein Sukun trägt.</string>
+    <string name="tajwid_desc_idgham_bi">Verschmelzen mit Nasenklang: Nun trifft auf ي ن م و und der Klang gleitet in den nächsten Buchstaben.</string>
+    <string name="tajwid_desc_idgham_bila">Verschmelzen ohne Nasenklang: Nun trifft auf ل oder ر und verschwindet ganz.</string>
+    <string name="tajwid_desc_iqlab">Umwandeln: Nun vor ب wird zu einem Mim-Klang mit Nasenklang.</string>
+    <string name="tajwid_desc_ikhfa">Verbergen: Nun vor einem der fünfzehn Buchstaben wird halb gesprochen, mit Nasenklang.</string>
+    <string name="tajwid_desc_izhar">Deutlich: Nun vor ء ه ع ح غ خ wird klar gesprochen, ohne Nasenklang.</string>
+    <string name="tajwid_desc_qalqalah">Der springende Klang. Steht auf diesen Buchstaben ein Sukun, springt der Klang ein wenig.</string>
+    <string name="tajwid_desc_madd">Dehnen: Ziehe den Vokal zwei bis sechs Zählzeiten lang.</string>
+    <string name="tajwid_desc_generic">Eine Tajwid-Regel aus dem Inhalts-Paket.</string>
+</resources>

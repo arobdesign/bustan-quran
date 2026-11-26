@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Story of Prophet Nuh</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #2D3A5C; font-family: 'Nunito', sans-serif; color: #FFFFFF; display: flex; flex-direction: column">
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 48px 18px 12px">
+    <a href="Home.dc.html" aria-label="Back to map" style="width: 44px; height: 44px; border-radius: 14px; background: #3B4A72; display: flex; align-items: center; justify-content: center">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+    </a>
+    <span style="font-size: 12px; font-weight: 800; color: #D8DEF0; background: #3B4A72; border-radius: 999px; padding: 6px 12px">Story Island · 3 of 25</span>
+  </div>
+
+  <div style="margin: 0 18px; height: 260px; border-radius: 28px; background: #8FB8DE; position: relative; overflow: hidden">
+    <svg width="354" height="260" viewBox="0 0 354 260" role="img" aria-label="The ark on the waves" style="position: absolute; left: 0; top: 0">
+      <circle cx="290" cy="56" r="26" fill="#F2B33D"></circle>
+      <path d="M80 70 Q120 46 160 70" stroke="#FFFFFF" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.8"></path>
+      <path d="M70 150 L284 150 L256 198 L98 198 Z" fill="#8C6A3F"></path>
+      <rect x="120" y="108" width="114" height="44" rx="6" fill="#B88B52"></rect>
+      <rect x="140" y="120" width="16" height="16" rx="3" fill="#5E4628"></rect>
+      <rect x="170" y="120" width="16" height="16" rx="3" fill="#5E4628"></rect>
+      <rect x="200" y="120" width="16" height="16" rx="3" fill="#5E4628"></rect>
+      <ellipse cx="110" cy="142" rx="12" ry="9" fill="#E2A54B"></ellipse>
+      <ellipse cx="250" cy="140" rx="10" ry="12" fill="#A79FD1"></ellipse>
+      <path d="M0 196 Q30 180 60 196 T120 196 T180 196 T240 196 T300 196 T360 196 V260 H0 Z" fill="#3E7CB1"></path>
+      <path d="M0 220 Q30 206 60 220 T120 220 T180 220 T240 220 T300 220 T360 220 V260 H0 Z" fill="#2F6696"></path>
+    </svg>
+  </div>
+
+  <div style="padding: 18px 22px 8px; display: flex; flex-direction: column; gap: 4px">
+    <h1 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-size: 26px; font-weight: 800; line-height: 1.15">Prophet Nuh and the Ark</h1>
+    <span style="font-size: 13px; font-weight: 700; color: #D8DEF0">Chapter 2 · Building the ark · 3 min</span>
+  </div>
+
+  <div style="padding: 6px 22px; display: flex; flex-direction: column; gap: 6px">
+    <div style="height: 8px; border-radius: 999px; background: #3B4A72; overflow: hidden"><div style="width: 42%; height: 100%; background: #F2B33D"></div></div>
+    <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #D8DEF0"><span>1:16</span><span>3:02</span></div>
+  </div>
+
+  <div style="display: flex; align-items: center; justify-content: center; gap: 26px; padding: 6px 0 14px">
+    <button type="button" aria-label="Back 10 seconds" style="width: 52px; height: 52px; border-radius: 50%; border: none; background: #3B4A72; color: #FFFFFF; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 800; cursor: pointer">−10</button>
+    <sc-if value="{{ playing }}" hint-placeholder-val="{{ false }}">
+      <button type="button" onClick="{{ toggle }}" aria-label="Pause" style="width: 76px; height: 76px; border-radius: 50%; border: none; background: #F2B33D; display: flex; align-items: center; justify-content: center; cursor: pointer">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" fill="#23302C"></rect><rect x="14" y="5" width="4" height="14" rx="1" fill="#23302C"></rect></svg>
+      </button>
+    </sc-if>
+    <sc-if value="{{ paused }}" hint-placeholder-val="{{ true }}">
+      <button type="button" onClick="{{ toggle }}" aria-label="Play" style="width: 76px; height: 76px; border-radius: 50%; border: none; background: #F2B33D; display: flex; align-items: center; justify-content: center; cursor: pointer">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="#23302C"></path></svg>
+      </button>
+    </sc-if>
+    <button type="button" aria-label="Forward 10 seconds" style="width: 52px; height: 52px; border-radius: 50%; border: none; background: #3B4A72; color: #FFFFFF; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 800; cursor: pointer">+10</button>
+  </div>
+
+  <div style="flex-grow: 1; background: #FBF6EC; border-radius: 28px 28px 0 0; padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 8px; color: #23302C">
+    <span style="font-size: 14px; font-weight: 800">Chapters</span>
+    <div style="display: flex; align-items: center; gap: 10px; min-height: 40px"><span style="width: 26px; height: 26px; border-radius: 50%; background: #0F6B5C; color: #FFFFFF; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center">1</span><span style="font-size: 14px; font-weight: 700; flex-grow: 1">Nuh calls his people</span><span style="font-size: 12px; font-weight: 800; color: #0F6B5C">Done</span></div>
+    <div style="display: flex; align-items: center; gap: 10px; min-height: 40px"><span style="width: 26px; height: 26px; border-radius: 50%; background: #F2B33D; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center">2</span><span style="font-size: 14px; font-weight: 800; flex-grow: 1">Building the ark</span><span style="font-size: 12px; font-weight: 800; color: #8A5A10">Playing</span></div>
+    <div style="display: flex; align-items: center; gap: 10px; min-height: 40px"><span style="width: 26px; height: 26px; border-radius: 50%; background: #EDE4D0; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center">3</span><span style="font-size: 14px; font-weight: 700; flex-grow: 1">The great flood</span></div>
+    <div style="display: flex; align-items: center; gap: 10px; min-height: 40px"><span style="width: 26px; height: 26px; border-radius: 50%; background: #EDE4D0; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center">4</span><span style="font-size: 14px; font-weight: 700; flex-grow: 1">A new beginning · story quiz</span></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { playing: true };
+}
+renderVals() {
+return { playing: this.state.playing, paused: !this.state.playing, toggle: () => this.setState({ playing: !this.state.playing }) };
+}
+}
+</script>
+</body>
+</html>

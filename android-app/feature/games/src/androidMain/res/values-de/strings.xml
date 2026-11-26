@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_title">Spiele</string>
+    <string name="game_locked">Gesperrt</string>
+    <string name="game_stage_little_stars">3–4 Jahre</string>
+    <string name="game_stage_explorers">5–6 Jahre</string>
+    <string name="game_stage_young_hafiz">7–10 Jahre</string>
+    <string name="game_tagline_little_stars">Kleine Sterne · hören, tippen und nachfahren</string>
+    <string name="game_tagline_explorers">Entdecker · Buchstaben verbinden, erstes Auswendiglernen</string>
+    <string name="game_tagline_young_hafiz">Junger Hafiz · bauen, weitermachen, verstehen</string>
+
+    <string name="g1_name">Buchstabenballons</string>
+    <string name="g1_goal">Buchstabenlaute</string>
+    <string name="g2_name">Buchstabengarten</string>
+    <string name="g2_goal">Hören und nachsprechen</string>
+    <string name="g3_name">Mit dem Finger nachfahren</string>
+    <string name="g3_goal">Buchstabenformen</string>
+    <string name="g4_name">Schattenpaare</string>
+    <string name="g4_goal">Ähnliche Buchstaben</string>
+    <string name="g5_name">Surenzug</string>
+    <string name="g5_goal">Kurze Suren</string>
+    <string name="g6_name">Kleines Du’a</string>
+    <string name="g6_goal">Tägliches Du’a</string>
+    <string name="g7_name">Harakat-Angeln</string>
+    <string name="g7_goal">Fatha, Kasra, Damma</string>
+    <string name="g8_name">Nachtsterne</string>
+    <string name="g8_goal">Arabische Zahlen</string>
+    <string name="g9_name">Buchstaben verbinden</string>
+    <string name="g9_goal">Verbundene Formen</string>
+    <string name="g10_name">Buchstabenlauf</string>
+    <string name="g10_goal">Buchstaben schnell lesen</string>
+    <string name="g11_name">Fehlendes Wort</string>
+    <string name="g11_goal">Erstes Auswendiglernen</string>
+    <string name="g12_name">Verse ordnen</string>
+    <string name="g12_goal">Reihenfolge der Verse</string>
+    <string name="g13_name">Wörtergedächtnis</string>
+    <string name="g13_goal">Koranwörter</string>
+    <string name="g14_name">Dem Rezitator nachsprechen</string>
+    <string name="g14_goal">Talaqqi</string>
+    <string name="g15_name">Buchstabenmarkt</string>
+    <string name="g15_goal">Wörter lesen</string>
+    <string name="g16_name">Sure erraten</string>
+    <string name="g16_goal">Suren kennen</string>
+    <string name="g17_name">Vers zusammenbauen</string>
+    <string name="g17_goal">Auswendiglernen</string>
+    <string name="g18_name">Bedeutung zusammensetzen</string>
+    <string name="g18_goal">Bedeutung</string>
+    <string name="g19_name">Tajwid-Detektiv</string>
+    <string name="g19_goal">Tajwid</string>
+    <string name="g20_name">Vers fortsetzen</string>
+    <string name="g20_goal">Muraja’a</string>
+    <string name="g21_name">Suren-Geschichten-Quiz</string>
+    <string name="g21_goal">Tadabbur</string>
+    <string name="g22_name">Auswendig-Abenteuer</string>
+    <string name="g22_goal">Langfristiges Ziel</string>
+    <string name="g23_name">Familien-Challenge</string>
+    <string name="g23_goal">Gemeinsam lernen</string>
+    <string name="g24_name">Klassenwettbewerb</string>
+    <string name="g24_goal">Lehrermodus</string>
+
+    <string name="balon_prompt">Lass den Buchstaben „%1$s“ platzen</string>
+    <string name="balon_listen_hint">Tippe auf den Lautsprecher, um ihn noch einmal zu hören</string>
+    <string name="balon_level">Level %1$d</string>
+    <string name="balon_round">Runde %1$d von %2$d</string>
+    <string name="balon_mascot_hint">%1$s hat einen Punkt darunter. Findest du ihn?</string>
+    <string name="balon_speaker_desc">Den Buchstaben noch einmal hören</string>
+    <string name="balon_balloon_desc">Luftballon mit dem Buchstaben %1$s</string>
+    <string name="game_susun_title">Baue den Vers</string>
+    <string name="game_susun_subtitle">Sure %1$s · Stufe 1 (mit Hinweisen)</string>
+    <string name="game_susun_stage">%1$d/%2$d</string>
+    <string name="game_susun_basmala">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</string>
+    <string name="game_susun_instruction">Ziehe die Wörter in Vers %1$d</string>
+    <string name="game_susun_wrong">Nicht ganz — versuch es noch einmal</string>
+    <string name="game_susun_correct">Das ist Vers %1$d. Gut gemacht!</string>
+    <string name="game_susun_listen">Anhören</string>
+    <string name="game_susun_check">Prüfen</string>
+    <string name="game_susun_slot_desc">Leeres Feld für ein fehlendes Wort</string>
+    <string name="game_susun_empty">Im Inhaltspaket sind noch keine Verse.</string>
+
+    <string name="game_sambung_title">Setze den Vers fort</string>
+    <string name="game_sambung_subtitle">Murojaah · %1$s</string>
+    <string name="game_sambung_stage">%1$d / %2$d</string>
+    <string name="game_sambung_prompt_label">Der Rezitator spricht…</string>
+    <string name="game_sambung_play_again">Noch einmal hören</string>
+    <string name="game_sambung_question">Welcher Vers kommt als Nächstes?</string>
+    <string name="game_sambung_correct">Richtig! Das ist Vers %1$d.</string>
+    <string name="game_sambung_wrong">Nicht dieser — hör noch einmal und versuch es erneut.</string>
+    <string name="game_sambung_next">Weiter</string>
+    <string name="game_sambung_option_desc">Weiter mit %1$s</string>
+    <string name="game_sambung_empty">Es gibt noch nicht genug Verse für dieses Spiel.</string>
+
+
+
+    <string name="reward_title">MashaAllah, %1$s!</string>
+    <string name="reward_title_generic">MashaAllah!</string>
+    <string name="reward_default_achievement">Du hast Vers 3 von Al-Ichlas gebaut</string>
+    <string name="reward_stars_desc">%1$d von %2$d Sternen</string>
+    <string name="reward_new_card">Neue Karte</string>
+    <string name="reward_card_name">Das Kamel</string>
+    <string name="reward_card_progress">Tiere im Koran · 4 von 12</string>
+    <string name="reward_next_ayah">Nächster Vers</string>
+    <string name="reward_back_to_map">Zurück zur Karte</string>
+</resources>

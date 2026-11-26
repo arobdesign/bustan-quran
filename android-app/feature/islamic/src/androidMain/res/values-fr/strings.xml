@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Planche 17 · Leçon de hijaiyah -->
+    <string name="hijaiyah_lesson_title">Lettre %1$d · %2$s</string>
+    <string name="hijaiyah_lesson_subtitle">Leçon de qaida 1</string>
+    <string name="hijaiyah_lesson_counter">%1$d / %2$d</string>
+    <string name="hijaiyah_trace_hint">Trace avec ton doigt, en partant du point jaune</string>
+    <string name="hijaiyah_trace_done">Bravo — tu l\'as tracée !</string>
+    <string name="hijaiyah_trace_start">1</string>
+    <string name="hijaiyah_forms_title">%1$s change de forme dans un mot</string>
+    <string name="hijaiyah_form_isolated">Seule</string>
+    <string name="hijaiyah_form_initial">Début</string>
+    <string name="hijaiyah_form_medial">Milieu</string>
+    <string name="hijaiyah_form_final">Fin</string>
+    <string name="hijaiyah_example_heading">Mot exemple</string>
+    <string name="hijaiyah_hear">Écouter %1$s</string>
+    <string name="hijaiyah_say">Dis-le · enregistre</string>
+    <string name="hijaiyah_next">Lettre suivante</string>
+    <string name="hijaiyah_empty">Aucune lettre dans le pack de contenu pour le moment.</string>
+
+    <!-- Planche 18 · Leçon de tajwid (Qalqalah) -->
+    <string name="tajwid_lesson_badge">Tajwid · règle %1$d sur %2$d</string>
+    <string name="tajwid_lesson_tip">Facile à retenir : « Qutbu Jad »</string>
+    <string name="tajwid_example_label">Exemple · arrêt sur la fin de %1$s, verset %2$d</string>
+    <string name="tajwid_example_pending">Le verset d\'exemple arrivera avec le pack complet du mushaf.</string>
+    <string name="tajwid_hear_bounce">Écouter le rebond</string>
+    <string name="tajwid_check_title">Vérification : quelle lettre rebondit ?</string>
+    <string name="tajwid_check_idle">Touche une lettre.</string>
+    <string name="tajwid_check_right">Oui ! %1$s est l\'une des 5 lettres qui rebondissent.</string>
+    <string name="tajwid_check_wrong">Essaie encore. Regarde les 5 lettres ci-dessus.</string>
+    <string name="tajwid_empty">Aucune règle de tajwid dans le pack de contenu pour le moment.</string>
+    <string name="tajwid_desc_ghunnah">Un bourdonnement nasal. Tiens-le deux temps quand le noun ou le mim porte une shadda ou un soukoun.</string>
+    <string name="tajwid_desc_idgham_bi">Fusion avec bourdonnement : le noun rencontre ي ن م و et le son glisse dans la lettre suivante.</string>
+    <string name="tajwid_desc_idgham_bila">Fusion sans bourdonnement : le noun rencontre ل ou ر et disparaît complètement.</string>
+    <string name="tajwid_desc_iqlab">Retournement : le noun suivi de ب devient un son de mim avec un bourdonnement.</string>
+    <string name="tajwid_desc_ikhfa">Dissimulation : le noun suivi de l\'une des quinze lettres se dit à moitié, avec un bourdonnement.</string>
+    <string name="tajwid_desc_izhar">Clarté : le noun suivi de ء ه ع ح غ خ se dit nettement, sans bourdonnement.</string>
+    <string name="tajwid_desc_qalqalah">Le son qui rebondit. Quand ces lettres portent un soukoun, le son rebondit un peu.</string>
+    <string name="tajwid_desc_madd">Allongement : étire la voyelle de deux à six temps.</string>
+    <string name="tajwid_desc_generic">Une règle de tajwid du pack de contenu.</string>
+</resources>

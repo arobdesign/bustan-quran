@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Story Quiz game</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #E9ECF6; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 16px; padding: 48px 18px 28px">
+  <div style="display: flex; align-items: center; justify-content: space-between">
+    <a href="KisahNabi.dc.html" aria-label="Back" style="width: 48px; height: 48px; border-radius: 16px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></a>
+    <div style="display: flex; flex-direction: column; align-items: center"><span style="font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; line-height: 1.1">Story Quiz</span><span style="font-size: 12px; font-weight: 700; color: #4A5560">Prophet Nuh · question 2 of 4</span></div>
+    <span style="width: 48px"></span>
+  </div>
+  <div style="height: 200px; border-radius: 26px; background: #8FB8DE; position: relative; overflow: hidden">
+    <svg width="354" height="200" viewBox="0 0 354 200" aria-hidden="true" style="position: absolute; left: 0; top: 0">
+      <path d="M0 120 Q40 104 80 120 T160 120 T240 120 T320 120 T400 120 V200 H0 Z" fill="#3E7CB1"></path>
+      <path d="M150 70 Q160 40 175 70 Q186 46 200 70" stroke="#FFFFFF" stroke-width="5" fill="none"></path>
+      <text x="177" y="110" text-anchor="middle" font-family="Baloo 2, sans-serif" font-size="56" font-weight="800" fill="#FFFFFF">?</text>
+    </svg>
+  </div>
+  <h1 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-size: 24px; font-weight: 800; line-height: 1.2; text-align: center">What did Allah tell Prophet Nuh to build?</h1>
+  <sc-for list="{{ opts }}" as="o" hint-placeholder-count="3">
+    <button type="button" onClick="{{ o.pick }}" style="min-height: 64px; border-radius: 18px; border: {{ o.border }}; background: {{ o.bg }}; font-family: 'Nunito', sans-serif; font-size: 18px; font-weight: 800; color: #23302C; cursor: pointer">{{ o.t }}</button>
+  </sc-for>
+  <p style="margin: 0; text-align: center; font-size: 14px; font-weight: 800; color: #4A5560">{{ msg }}</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { p: null }; }
+renderVals() {
+const p = this.state.p;
+const o = [{ t: 'A tall tower', ok: false }, { t: 'A big ship, the Ark', ok: true }, { t: 'A city wall', ok: false }];
+return {
+msg: p === null ? '' : (o[p].ok ? 'Yes! Nuh built the Ark, and the believers and animals were safe.' : 'Not quite. Think about the water in the story.'),
+opts: o.map((x, i) => ({ t: x.t, border: p === i ? (x.ok ? '3px solid #0F6B5C' : '3px solid #E0734F') : '2px solid #D6DEE8', bg: p === i ? (x.ok ? '#DCEFE9' : '#FBE3D9') : '#FFFFFF', pick: () => this.setState({ p: i }) }))
+};
+}
+}
+</script>
+</body>
+</html>

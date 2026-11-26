@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hafalan_memorise">Memorise · %1$s</string>
+    <string name="hafalan_ayah_of">Ayah %1$d of %2$d</string>
+    <string name="hafalan_step_listen">1 · Listen</string>
+    <string name="hafalan_step_repeat">2 · Repeat</string>
+    <string name="hafalan_step_own">3 · On my own</string>
+    <string name="hafalan_step_progress">%1$d of %2$d</string>
+    <string name="hafalan_step_locked">locked</string>
+    <string name="hafalan_reciter">Reciter: Child voice</string>
+    <string name="hafalan_speed">Speed %1$s×</string>
+    <string name="hafalan_repeat">Repeat %1$d×</string>
+    <string name="hafalan_prompt">Your turn! Read Ayah %1$d after the reciter.</string>
+    <string name="hafalan_prev_ayah">Previous ayah</string>
+    <string name="hafalan_record">Record my reading</string>
+    <string name="hafalan_play">Play reciter</string>
+    <!-- Artboard 16 · My hafalan -->
+    <string name="hafalan_map_title">My hafalan</string>
+    <string name="hafalan_map_review_box">Today\'s review box</string>
+    <string name="hafalan_map_review_count">%1$d of %2$d done</string>
+    <string name="hafalan_map_task_done">Task done</string>
+    <string name="hafalan_map_start">Start ›</string>
+    <string name="hafalan_map_juz_title">Juz \'Amma · %1$d surahs</string>
+    <string name="hafalan_map_juz_range">Surah %1$d to %2$d</string>
+    <string name="hafalan_map_legend_memorised">Memorised</string>
+    <string name="hafalan_map_legend_review">Needs review</string>
+    <string name="hafalan_map_legend_learning">Learning</string>
+    <string name="hafalan_map_legend_not_yet">Not yet</string>
+</resources>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tajwid lesson Qalqalah</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Amiri+Quran&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #EEF3FA; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 14px; padding: 48px 18px 24px">
+  <div style="display: flex; align-items: center; justify-content: space-between">
+    <a href="GameList.dc.html" aria-label="Back" style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+    </a>
+    <span style="font-size: 12px; font-weight: 800; color: #1F4E79; background: #D7E8F5; border-radius: 999px; padding: 6px 12px">Tajwid · rule 4 of 8</span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 4px">
+    <h1 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-size: 32px; font-weight: 800; line-height: 1.1">Qalqalah</h1>
+    <p style="margin: 0; font-size: 15px; font-weight: 600; color: #4A5560">The bouncing sound. When these letters have a sukun, the sound bounces a little.</p>
+  </div>
+
+  <div style="display: flex; gap: 8px; justify-content: space-between" dir="rtl" lang="ar">
+    <span style="flex: 1; height: 72px; border-radius: 18px; background: #5B8DB8; color: #FFFFFF; font-family: 'Amiri Quran', serif; font-size: 40px; display: flex; align-items: center; justify-content: center">ق</span>
+    <span style="flex: 1; height: 72px; border-radius: 18px; background: #5B8DB8; color: #FFFFFF; font-family: 'Amiri Quran', serif; font-size: 40px; display: flex; align-items: center; justify-content: center">ط</span>
+    <span style="flex: 1; height: 72px; border-radius: 18px; background: #5B8DB8; color: #FFFFFF; font-family: 'Amiri Quran', serif; font-size: 40px; display: flex; align-items: center; justify-content: center">ب</span>
+    <span style="flex: 1; height: 72px; border-radius: 18px; background: #5B8DB8; color: #FFFFFF; font-family: 'Amiri Quran', serif; font-size: 40px; display: flex; align-items: center; justify-content: center">ج</span>
+    <span style="flex: 1; height: 72px; border-radius: 18px; background: #5B8DB8; color: #FFFFFF; font-family: 'Amiri Quran', serif; font-size: 40px; display: flex; align-items: center; justify-content: center">د</span>
+  </div>
+  <p style="margin: 0; text-align: center; font-size: 13px; font-weight: 800; color: #1F4E79">Easy to remember: "Qutbu Jad"</p>
+
+  <div style="background: #FFFFFF; border-radius: 22px; padding: 16px; display: flex; flex-direction: column; gap: 8px">
+    <span style="font-size: 13px; font-weight: 800; color: #4A5560">Example · stopping at the end of Al-Ikhlas ayah 1</span>
+    <p dir="rtl" lang="ar" style="margin: 0; font-family: 'Amiri Quran', serif; font-size: 34px; line-height: 1.9; text-align: center">قُلْ هُوَ اللَّهُ أَحَ<span style="color: #1F6FB2; background: #D7E8F5; border-radius: 8px">دْ</span></p>
+    <button type="button" style="align-self: center; min-height: 44px; padding: 0 18px; border-radius: 999px; border: none; background: #1F4E79; color: #FFFFFF; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; display: flex; align-items: center; gap: 8px; cursor: pointer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z" fill="#FFFFFF"></path><path d="M16.5 8.5a5 5 0 0 1 0 7"></path></svg>
+      Hear the bounce
+    </button>
+  </div>
+
+  <div style="background: #FFFFFF; border-radius: 22px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
+    <span style="font-size: 14px; font-weight: 800">Quick check: which letter bounces?</span>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px" dir="rtl" lang="ar">
+      <sc-for list="{{ opts }}" as="o" hint-placeholder-count="3">
+        <sc-if value="{{ o.right }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ o.pick }}" style="min-height: 60px; border-radius: 16px; border: 3px solid #0F6B5C; background: #DCEFE9; font-family: 'Amiri Quran', serif; font-size: 30px; color: #23302C; cursor: pointer">{{ o.g }}</button></sc-if>
+        <sc-if value="{{ o.wrong }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ o.pick }}" style="min-height: 60px; border-radius: 16px; border: 3px solid #E0734F; background: #FBE3D9; font-family: 'Amiri Quran', serif; font-size: 30px; color: #23302C; cursor: pointer">{{ o.g }}</button></sc-if>
+        <sc-if value="{{ o.idle }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ o.pick }}" style="min-height: 60px; border-radius: 16px; border: 2px solid #D6DEE8; background: #FFFFFF; font-family: 'Amiri Quran', serif; font-size: 30px; color: #23302C; cursor: pointer">{{ o.g }}</button></sc-if>
+      </sc-for>
+    </div>
+    <span style="font-size: 13px; font-weight: 700; color: #4A5560; min-height: 18px">{{ feedback }}</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { picked: null };
+}
+renderVals() {
+const p = this.state.picked;
+const opts = [{ g: 'م', ok: false }, { g: 'ق', ok: true }, { g: 'س', ok: false }];
+const fb = p === null ? 'Tap a letter.' : (opts[p].ok ? 'Yes! Qaf is one of the 5 bouncing letters.' : 'Try again. Look at the 5 letters above.');
+return {
+feedback: fb,
+opts: opts.map((o, i) => ({ g: o.g, right: p === i && o.ok, wrong: p === i && !o.ok, idle: p !== i, pick: () => this.setState({ picked: i }) }))
+};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+[versions]
+# Toolchain
+agp = "8.13.2"
+kotlin = "2.4.21"
+ksp = "2.3.14"
+
+# SDK
+compileSdk = "36"
+minSdk = "26"
+targetSdk = "36"
+
+# Compose Multiplatform (stable only).
+# HARD CEILING: CMP 1.12.x maps to Jetpack Compose 1.12.1 on Android, whose AAR
+# metadata demands compileSdk 37 and AGP 9.1.0. This project builds with AGP
+# 8.13.2 / compileSdk 36, so 1.11.1 (→ Jetpack Compose 1.11.2) is the last
+# CMP release that resolves here. Raising this requires the AGP 9 migration.
+composeMultiplatform = "1.11.1"
+# Material3 for CMP is versioned independently from CMP core.
+composeMaterial3 = "1.9.0"
+# AndroidX Compose BOM. 2026.05.01 == Jetpack Compose 1.11.2, the exact Jetpack
+# Compose version Compose Multiplatform 1.11.1 is built on.
+composeBom = "2026.05.01"
+material3WindowSizeClass = "1.3.1"
+# Last version of the AndroidX Material icons published before the artifacts were
+# frozen at 1.7.x. Compose Multiplatform stopped shipping material-icons after
+# 1.7.3, so this is the only source of `Icons.*` for now. See PROGRESS.md.
+composeIconsExtended = "1.7.8"
+# JetBrains lifecycle/navigation KMP builds map onto AndroidX on Android.
+# 2.11.0 / 2.10.0 map to androidx.lifecycle 2.11.0 / androidx.navigation 2.10.0,
+# which also require compileSdk 37 + AGP 9.1.0. These are the newest pairs that
+# still resolve against compileSdk 36: 2.9.6 → androidx 2.9.4, 2.9.2 → 2.9.7.
+lifecycleKmp = "2.9.6"
+navigationKmp = "2.9.2"
+adaptiveKmp = "1.3.0"
+
+# Android only
+coreKtx = "1.15.0"
+activityCompose = "1.9.3"
+lifecycleRuntimeKtx = "2.8.7"
+media3 = "1.5.0"
+work = "2.10.0"
+playBilling = "7.1.1"
+
+# Multiplatform libraries
+room = "2.8.5"
+datastore = "1.3.0"
+koin = "4.2.2"
+ktor = "3.6.2"
+supabase = "3.9.0"
+coroutines = "1.11.0"
+serialization = "1.13.0"
+okio = "3.18.2"
+
+# Testing
+junit = "4.13.2"
+androidxJunit = "1.2.1"
+espressoCore = "3.6.1"
+turbine = "1.2.0"
+mockk = "1.13.13"
+detekt = "1.23.7"
+
+[libraries]
+# Compose Multiplatform (commonMain) — resolves to AndroidX artifacts on Android
+compose-runtime = { group = "org.jetbrains.compose.runtime", name = "runtime", version.ref = "composeMultiplatform" }
+compose-foundation = { group = "org.jetbrains.compose.foundation", name = "foundation", version.ref = "composeMultiplatform" }
+compose-ui = { group = "org.jetbrains.compose.ui", name = "ui", version.ref = "composeMultiplatform" }
+compose-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "composeMaterial3" }
+compose-components-resources = { group = "org.jetbrains.compose.components", name = "components-resources", version.ref = "composeMultiplatform" }
+
+# Compose Multiplatform ViewModel / Navigation
+androidx-lifecycle-viewmodel-compose-kmp = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleKmp" }
+androidx-lifecycle-runtime-compose-kmp = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycleKmp" }
+androidx-navigation-compose-kmp = { group = "org.jetbrains.androidx.navigation", name = "navigation-compose", version.ref = "navigationKmp" }
+compose-material3-adaptive-kmp = { group = "org.jetbrains.compose.material3.adaptive", name = "adaptive", version.ref = "adaptiveKmp" }
+
+# Android only Compose extras
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-compose-material3-window = { group = "androidx.compose.material3", name = "material3-window-size-class", version.ref = "material3WindowSizeClass" }
+androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended", version.ref = "composeIconsExtended" }
+
+# Android only
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-media3-exoplayer = { group = "androidx.media3", name = "media3-exoplayer", version.ref = "media3" }
+androidx-media3-session = { group = "androidx.media3", name = "media3-session", version.ref = "media3" }
+androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "work" }
+play-billing-ktx = { group = "com.android.billingclient", name = "billing-ktx", version.ref = "playBilling" }
+
+# Multiplatform libraries
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-datastore-proto = { group = "androidx.datastore", name = "datastore", version.ref = "datastore" }
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+koin-core-viewmodel = { group = "io.insert-koin", name = "koin-core-viewmodel", version.ref = "koin" }
+koin-compose = { group = "io.insert-koin", name = "koin-compose", version.ref = "koin" }
+koin-compose-viewmodel = { group = "io.insert-koin", name = "koin-compose-viewmodel", version.ref = "koin" }
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+supabase-postgrest = { group = "io.github.jan-tennert.supabase", name = "postgrest-kt", version.ref = "supabase" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" }
+okio = { group = "com.squareup.okio", name = "okio", version.ref = "okio" }
+
+# Testing
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+koin-test = { group = "io.insert-koin", name = "koin-test", version.ref = "koin" }
+
+# Build logic (consumed by build-logic/convention)
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-compose-compiler-gradlePlugin = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlin" }
+compose-gradlePlugin = { group = "org.jetbrains.compose", name = "compose-gradle-plugin", version.ref = "composeMultiplatform" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "symbol-processing-gradle-plugin", version.ref = "ksp" }
+
+[plugins]
+# Convention plugins, resolved from the included `build-logic` build (no version).
+bustan-kmp-library = { id = "bustan.kmp.library" }
+bustan-kmp-compose-library = { id = "bustan.kmp.compose.library" }
+bustan-android-application = { id = "bustan.android.application" }
+
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }

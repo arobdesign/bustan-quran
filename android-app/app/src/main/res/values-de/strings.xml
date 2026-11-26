@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Bustan Koran</string>
+    <string name="voice_tap_island_letters">Buchstaben-Insel</string>
+    <string name="voice_tap_island_surah">Suren-Insel</string>
+    <string name="voice_tap_island_dua">Du\'a-Insel</string>
+    <string name="voice_tap_island_stories">Geschichten-Insel</string>
+    <string name="voice_tap_bottom_map">Karte</string>
+    <string name="voice_tap_bottom_quran">Koran</string>
+    <string name="voice_tap_bottom_cards">Meine Karten</string>
+</resources>

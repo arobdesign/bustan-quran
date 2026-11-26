@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Missing Word game</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Amiri+Quran&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FBF6EC; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 18px; padding: 48px 18px 28px">
+  <div style="display: flex; align-items: center; justify-content: space-between">
+    <a href="GameList.dc.html" aria-label="Back" style="width: 48px; height: 48px; border-radius: 16px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 #EADFC8"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></a>
+    <div style="display: flex; flex-direction: column; align-items: center"><span style="font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; line-height: 1.1">Missing Word</span><span style="font-size: 12px; font-weight: 700; color: #5B6661">Al-Ikhlas · ayah 1</span></div>
+    <span style="width: 48px"></span>
+  </div>
+  <div style="background: #FFFFFF; border-radius: 26px; padding: 22px 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; box-shadow: 0 3px 0 #EADFC8">
+    <button type="button" aria-label="Hear the ayah" style="width: 56px; height: 56px; border-radius: 50%; border: none; background: #0F6B5C; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z" fill="#FFFFFF"></path><path d="M16.5 8.5a5 5 0 0 1 0 7"></path></svg></button>
+    <p dir="rtl" lang="ar" style="margin: 0; font-family: 'Amiri Quran', serif; font-size: 34px; line-height: 1.9; text-align: center">قُلْ هُوَ اللَّهُ <span style="display: inline-block; min-width: 90px; border-bottom: 3px dashed #C98A12; color: #0F6B5C">{{ filled }}</span></p>
+  </div>
+  <p style="margin: 0; font-size: 16px; font-weight: 800; text-align: center">Which word is missing?</p>
+  <div dir="rtl" lang="ar" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+    <sc-for list="{{ opts }}" as="o" hint-placeholder-count="3">
+      <button type="button" onClick="{{ o.pick }}" style="min-height: 72px; border-radius: 18px; border: {{ o.border }}; background: {{ o.bg }}; font-family: 'Amiri Quran', serif; font-size: 26px; color: #23302C; cursor: pointer">{{ o.ar }}</button>
+    </sc-for>
+  </div>
+  <p style="margin: 0; text-align: center; font-size: 14px; font-weight: 800; color: #4F5A55; min-height: 20px">{{ msg }}</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { p: null }; }
+renderVals() {
+const p = this.state.p;
+const o = [{ ar: 'الصَّمَدُ', ok: false }, { ar: 'أَحَدٌ', ok: true }, { ar: 'يُولَدْ', ok: false }];
+const ok = p !== null && o[p].ok;
+return {
+filled: ok ? 'أَحَدٌ' : ' ',
+msg: p === null ? '' : (ok ? 'Correct! Allah is One.' : 'Listen again and try once more.'),
+opts: o.map((x, i) => ({ ar: x.ar, border: p === i ? (x.ok ? '3px solid #0F6B5C' : '3px solid #E0734F') : '2px solid #E3D8C1', bg: p === i ? (x.ok ? '#DCEFE9' : '#FBE3D9') : '#FFFFFF', pick: () => this.setState({ p: i }) }))
+};
+}
+}
+</script>
+</body>
+</html>

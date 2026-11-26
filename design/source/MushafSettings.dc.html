@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mushaf settings</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Amiri+Quran&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F7F0E1; font-family: 'Nunito', sans-serif; color: #23302C; position: relative; overflow: hidden">
+  <div aria-hidden="true" style="position: absolute; inset: 0; background: rgba(35, 48, 44, 0.45)"></div>
+  <div role="dialog" aria-label="Mushaf settings" style="position: absolute; left: 0; right: 0; bottom: 0; background: #FFFFFF; border-radius: 28px 28px 0 0; padding: 12px 20px 28px; display: flex; flex-direction: column; gap: 14px">
+    <span aria-hidden="true" style="align-self: center; width: 44px; height: 5px; border-radius: 999px; background: #E3D8C1"></span>
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <span style="font-family: 'Baloo 2', sans-serif; font-size: 22px; font-weight: 800">Reading settings</span>
+      <a href="MushafPage.dc.html" style="font-size: 15px; font-weight: 800; min-height: 44px; display: flex; align-items: center">Done</a>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <span style="font-size: 14px; font-weight: 800">Text size</span>
+      <div style="display: flex; gap: 8px">
+        <sc-for list="{{ sizes }}" as="z" hint-placeholder-count="3">
+          <sc-if value="{{ z.sel }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ z.pick }}" aria-pressed="true" style="flex: 1; min-height: 56px; border-radius: 14px; border: 3px solid #0F6B5C; background: #DCEFE9; font-family: 'Amiri Quran', serif; font-size: {{ z.px }}px; color: #23302C; cursor: pointer">قُلْ</button></sc-if>
+          <sc-if value="{{ z.unsel }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ z.pick }}" aria-pressed="false" style="flex: 1; min-height: 56px; border-radius: 14px; border: 2px solid #E3D8C1; background: #FFFFFF; font-family: 'Amiri Quran', serif; font-size: {{ z.px }}px; color: #23302C; cursor: pointer">قُلْ</button></sc-if>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; min-height: 48px">
+      <span style="font-size: 14px; font-weight: 800">Colour-coded tajwid</span>
+      <sc-if value="{{ tajwid }}" hint-placeholder-val="{{ true }}"><button type="button" role="switch" aria-checked="true" aria-label="Colour-coded tajwid" onClick="{{ flipTajwid }}" style="width: 52px; height: 32px; border-radius: 999px; border: none; background: #0F6B5C; position: relative; cursor: pointer"><span style="position: absolute; top: 4px; right: 4px; width: 24px; height: 24px; border-radius: 50%; background: #FFFFFF"></span></button></sc-if>
+      <sc-if value="{{ noTajwid }}" hint-placeholder-val="{{ false }}"><button type="button" role="switch" aria-checked="false" aria-label="Colour-coded tajwid" onClick="{{ flipTajwid }}" style="width: 52px; height: 32px; border-radius: 999px; border: none; background: #CFC7B5; position: relative; cursor: pointer"><span style="position: absolute; top: 4px; left: 4px; width: 24px; height: 24px; border-radius: 50%; background: #FFFFFF"></span></button></sc-if>
+    </div>
+    <sc-if value="{{ tajwid }}" hint-placeholder-val="{{ true }}">
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+        <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700"><span style="width: 14px; height: 14px; border-radius: 4px; background: #2E8B57"></span>Ghunnah</span>
+        <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700"><span style="width: 14px; height: 14px; border-radius: 4px; background: #1F6FB2"></span>Qalqalah</span>
+        <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700"><span style="width: 14px; height: 14px; border-radius: 4px; background: #C0392B"></span>Mad (long)</span>
+        <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700"><span style="width: 14px; height: 14px; border-radius: 4px; background: #8E44AD"></span>Ikhfa</span>
+      </div>
+    </sc-if>
+
+    <div style="display: flex; flex-direction: column; background: #FBF6EC; border-radius: 16px; padding: 2px 14px">
+      <div style="display: flex; justify-content: space-between; align-items: center; min-height: 48px; border-bottom: 1px solid #EEE8DA"><span style="font-size: 14px; font-weight: 700">Transliteration</span><span style="font-size: 14px; font-weight: 800; color: #0F6B5C">On</span></div>
+      <div style="display: flex; justify-content: space-between; align-items: center; min-height: 48px; border-bottom: 1px solid #EEE8DA"><span style="font-size: 14px; font-weight: 700">Meaning under ayah</span><span style="font-size: 14px; font-weight: 800; color: #0F6B5C">English</span></div>
+      <div style="display: flex; justify-content: space-between; align-items: center; min-height: 48px"><span style="font-size: 14px; font-weight: 700">Night reading</span><span style="font-size: 14px; font-weight: 800; color: #0F6B5C">Auto</span></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { size: 1, tajwid: true };
+}
+renderVals() {
+const s = this.state;
+const px = [20, 28, 36];
+return {
+tajwid: s.tajwid, noTajwid: !s.tajwid,
+flipTajwid: () => this.setState({ tajwid: !s.tajwid }),
+sizes: px.map((p, i) => ({ px: p, sel: s.size === i, unsel: s.size !== i, pick: () => this.setState({ size: i }) }))
+};
+}
+}
+</script>
+</body>
+</html>

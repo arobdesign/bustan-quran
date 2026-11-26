@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Games</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FBF6EC; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 14px; padding: 48px 18px 20px; overflow: hidden">
+  <div style="display: flex; align-items: center; gap: 12px">
+    <a href="Home.dc.html" aria-label="Back to map" style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 #EADFC8">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+    </a>
+    <h1 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-size: 24px; font-weight: 800">Games</h1>
+  </div>
+
+  <div role="tablist" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; background: #EFE7D6; border-radius: 999px; padding: 4px">
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+      <sc-if value="{{ t.sel }}" hint-placeholder-val="{{ false }}"><button type="button" role="tab" aria-selected="true" onClick="{{ t.pick }}" style="min-height: 44px; border: none; border-radius: 999px; background: #0F6B5C; color: #FFFFFF; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 800; cursor: pointer">{{ t.label }}</button></sc-if>
+      <sc-if value="{{ t.unsel }}" hint-placeholder-val="{{ true }}"><button type="button" role="tab" aria-selected="false" onClick="{{ t.pick }}" style="min-height: 44px; border: none; border-radius: 999px; background: transparent; color: #23302C; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 800; cursor: pointer">{{ t.label }}</button></sc-if>
+    </sc-for>
+  </div>
+  <span style="font-size: 13px; font-weight: 700; color: #5B6661">{{ tagline }}</span>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+    <sc-for list="{{ games }}" as="g" hint-placeholder-count="8">
+      <sc-if value="{{ g.link }}" hint-placeholder-val="{{ true }}">
+        <a href="{{ g.href }}" style="background: #FFFFFF; border-radius: 18px; padding: 10px; display: flex; flex-direction: column; gap: 6px; text-decoration: none; color: #23302C; box-shadow: 0 2px 0 #EADFC8">
+          <span style="height: 54px; border-radius: 12px; background: {{ g.tint }}; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-size: 22px; font-weight: 800; color: #23302C">{{ g.no }}</span>
+          <span style="font-size: 14px; font-weight: 800; line-height: 1.2">{{ g.name }}</span>
+          <span style="font-size: 11px; font-weight: 700; color: #5B6661">{{ g.goal }}</span>
+        </a>
+      </sc-if>
+      <sc-if value="{{ g.locked }}" hint-placeholder-val="{{ false }}">
+        <div style="background: #FFFFFF; border-radius: 18px; padding: 10px; display: flex; flex-direction: column; gap: 6px; color: #23302C; opacity: 0.6">
+          <span style="height: 54px; border-radius: 12px; background: #EFE7D6; display: flex; align-items: center; justify-content: center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5B6661" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Locked"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+          </span>
+          <span style="font-size: 14px; font-weight: 800; line-height: 1.2">{{ g.name }}</span>
+          <span style="font-size: 11px; font-weight: 700; color: #5B6661">{{ g.goal }}</span>
+        </div>
+      </sc-if>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { stage: 0 };
+}
+renderVals() {
+const stages = [
+{ label: 'Ages 3–4', tagline: 'Little Stars · listen, tap and trace', tint: '#FCE7B8', list: [
+[1, 'Letter Balloons', 'Letter sounds', 'BalonHuruf.dc.html'], [2, 'Letter Garden', 'Listen and repeat', 'GKebunHuruf.dc.html'], [3, 'Finger Trace', 'Letter shapes', 'HijaiyahLesson.dc.html'], [4, 'Shadow Match', 'Similar letters', 'GBayangan.dc.html'],
+[5, 'Surah Train', 'Short surahs', 'GKeretaSurah.dc.html'], [6, 'Little Du\'a', 'Daily du\'a', 'DoaHarian.dc.html'], [7, 'Harakat Fishing', 'Fathah, kasrah, dammah', 'IkanHarakat.dc.html'], [8, 'Night Stars', 'Arabic numbers', 'GBintang.dc.html']] },
+{ label: 'Ages 5–6', tagline: 'Explorers · join letters, first memorising', tint: '#DCEFE9', list: [
+[9, 'Join the Letters', 'Joined shapes', 'GSambungHuruf.dc.html'], [10, 'Letter Run', 'Speed reading letters', 'GLariHijaiyah.dc.html'], [11, 'Missing Word', 'First hafalan', 'GAyatHilang.dc.html'], [12, 'Order the Ayat', 'Ayah order', 'GUrutkanAyat.dc.html'],
+[13, 'Word Memory', "Qur'an words", 'MemoriKata.dc.html'], [14, 'Copy the Reciter', 'Talaqqi', 'Hafalan.dc.html'], [15, 'Letter Market', 'Reading words', 'GPasarHuruf.dc.html'], [16, 'Guess the Surah', 'Know the surahs', 'GTebakSurah.dc.html']] },
+{ label: 'Ages 7–10', tagline: 'Young Hafiz · build, continue, understand', tint: '#D7E8F5', list: [
+[17, 'Build the Ayah', 'Hafalan', 'SusunAyat.dc.html'], [18, 'Build the Meaning', 'Meaning', 'GSusunArti.dc.html'], [19, 'Tajwid Detective', 'Tajwid', 'TajwidLesson.dc.html'], [20, 'Continue the Ayah', 'Murojaah', 'SambungAyat.dc.html'],
+[21, 'Surah Story Quiz', 'Tadabbur', 'GKuisKisah.dc.html'], [22, 'Hafalan Adventure', 'Long-term goal', 'HafalanMap.dc.html'], [23, 'Family Challenge', 'Learn together', 'GKeluarga.dc.html'], [24, 'Class Contest', 'Teacher mode', 'ModeGuru.dc.html']] }
+];
+const st = stages[this.state.stage];
+return {
+tagline: st.tagline,
+tabs: stages.map((s, i) => ({ label: s.label, sel: i === this.state.stage, unsel: i !== this.state.stage, pick: () => this.setState({ stage: i }) })),
+games: st.list.map((g) => ({ no: g[0], name: g[1], goal: g[2], href: g[3], link: !!g[3], locked: !g[3], tint: st.tint }))
+};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">بستان القرآن</string>
+    <string name="loading_bismillah">بسم الله… نُجهّز دروسك</string>
+    <string name="onboarding_title">تعلّم القرآن باللعب</string>
+    <string name="onboarding_subtitle">حروف وسور قصيرة وحفظ للأعمار من ٣ إلى ١٠ سنوات. بلا إعلانات ويعمل دون إنترنت.</string>
+    <string name="onboarding_choose_language">اختر لغة التطبيق</string>
+    <string name="onboarding_coming_soon">التركية والهولندية والأردية والإندونيسية والملايوية قريبًا.</string>
+    <string name="onboarding_get_started">ابدأ الآن</string>
+    <string name="onboarding_have_account">لديّ حساب بالفعل</string>
+    <string name="parent_gate_title">للكبار فقط</string>
+    <string name="parent_gate_subtitle">أجب لفتح الإعدادات وتقارير التقدّم والمشتريات.</string>
+    <string name="parent_gate_wrong">ليس تمامًا. هذا سؤال جديد.</string>
+    <string name="parent_gate_footnote">السؤال مكتوب بالكلمات كي لا يخمّنه الصغار. ويظهر سؤال جديد في كل مرة.</string>
+    <string name="main_who_is_learning">من يتعلّم اليوم؟</string>
+    <string name="main_add_child">أضف طفلًا</string>
+    <string name="main_for_parents">للوالدين</string>
+    <string name="main_footnote">بلا إعلانات · يعمل دون إنترنت · آمن للأطفال</string>
+    <string name="tier_little_stars">نجوم صغيرة · ٤</string>
+    <string name="tier_explorers">مستكشفون · ٥</string>
+    <string name="tier_young_hafiz">حافظ صغير · ٧</string>
+</resources>

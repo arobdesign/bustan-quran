@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ramadan mode</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Amiri+Quran&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#F2B33D}a:hover{color:#FCE7B8}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #1E2A4A; font-family: 'Nunito', sans-serif; color: #FFFFFF; display: flex; flex-direction: column; gap: 12px; padding: 48px 18px 20px; overflow: hidden">
+  <div style="display: flex; align-items: center; justify-content: space-between">
+    <a href="Home.dc.html" aria-label="Back to map" style="width: 44px; height: 44px; border-radius: 14px; background: #2D3A5C; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></a>
+    <div style="display: flex; flex-direction: column; align-items: center"><span style="font-family: 'Baloo 2', sans-serif; font-size: 22px; font-weight: 800; line-height: 1.1">Ramadan Kareem</span><span style="font-size: 12px; font-weight: 700; color: #D8DEF0">Day 12 of 30</span></div>
+    <span aria-hidden="true" style="width: 44px; height: 44px; border-radius: 50%; box-shadow: -10px 6px 0 0 #F2B33D"></span>
+  </div>
+  <div style="background: #2D3A5C; border-radius: 20px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
+    <div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 15px; font-weight: 800">Goal: finish Juz 'Amma</span><span style="font-size: 13px; font-weight: 800; color: #F2B33D">[14] of 37</span></div>
+    <div style="height: 10px; border-radius: 999px; background: #1E2A4A; overflow: hidden"><div style="width: 38%; height: 100%; background: #F2B33D"></div></div>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px">
+    <sc-for list="{{ days }}" as="d" hint-placeholder-count="30">
+      <span style="height: 40px; border-radius: 10px; background: {{ d.bg }}; color: {{ d.ink }}; box-shadow: {{ d.ring }}; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center">{{ d.n }}</span>
+    </sc-for>
+  </div>
+  <div style="background: #FBF6EC; color: #23302C; border-radius: 20px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center">
+    <span style="font-size: 13px; font-weight: 800; color: #5B6661">Du'a for breaking the fast</span>
+    <p dir="rtl" lang="ar" style="margin: 0; font-family: 'Amiri Quran', serif; font-size: 21px; line-height: 1.9">ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ وَثَبَتَ الْأَجْرُ إِنْ شَاءَ اللَّهُ</p>
+    <span style="font-size: 12px; font-weight: 700; color: #4F5A55">The thirst is gone, the veins are moist, and the reward is sure, in sha Allah.</span>
+  </div>
+  <a href="DoaHarian.dc.html" style="min-height: 52px; border-radius: 999px; background: #F2B33D; color: #23302C; font-size: 15px; font-weight: 800; display: flex; align-items: center; justify-content: center; text-decoration: none">Today's Ramadan task: 1 surah + 1 du'a</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+const days = [];
+for (let n = 1; n <= 30; n++) {
+const done = n < 12, today = n === 12;
+days.push({ n, bg: done ? '#3E8E7E' : (today ? '#F2B33D' : '#2D3A5C'), ink: today ? '#23302C' : '#FFFFFF', ring: today ? '0 0 0 3px #FCE7B8' : 'none' });
+}
+return { days };
+}
+}
+</script>
+</body>
+</html>

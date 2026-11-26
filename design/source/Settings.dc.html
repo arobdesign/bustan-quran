@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parent settings</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F4F1EA; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 12px; padding: 48px 18px 20px; overflow: hidden">
+  <div style="display: flex; align-items: center; gap: 12px">
+    <a href="ParentDashboard.dc.html" aria-label="Back" style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+    </a>
+    <h1 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-size: 24px; font-weight: 800">Settings</h1>
+  </div>
+
+  <span style="font-size: 12px; font-weight: 800; color: #5B6661; letter-spacing: 0.06em; margin-top: 4px">LANGUAGE &amp; QUR'AN</span>
+  <div style="background: #FFFFFF; border-radius: 18px; padding: 2px 16px; display: flex; flex-direction: column">
+    <div style="display: flex; justify-content: space-between; align-items: center; min-height: 46px; border-bottom: 1px solid #EEE8DA"><span style="font-size: 14px; font-weight: 700">App language</span><span style="font-size: 14px; font-weight: 800; color: #0F6B5C">English</span></div>
+    <div style="display: flex; justify-content: space-between; align-items: center; min-height: 46px; border-bottom: 1px solid #EEE8DA"><span style="font-size: 14px; font-weight: 700">Meaning language</span><span style="font-size: 14px; font-weight: 800; color: #0F6B5C">English</span></div>
+    <div style="display: flex; justify-content: space-between; align-items: center; min-height: 46px; border-bottom: 1px solid #EEE8DA"><span style="font-size: 14px; font-weight: 700">Reciter</span><span style="font-size: 14px; font-weight: 800; color: #0F6B5C">Child voice</span></div>
+    <div style="display: flex; justify-content: space-between; align-items: center; min-height: 46px"><span style="font-size: 14px; font-weight: 700">Recitation</span><span style="font-size: 14px; font-weight: 800; color: #0F6B5C">Hafs 'an 'Asim</span></div>
+  </div>
+
+  <span style="font-size: 12px; font-weight: 800; color: #5B6661; letter-spacing: 0.06em; margin-top: 4px">LEARNING</span>
+  <div style="background: #FFFFFF; border-radius: 18px; padding: 2px 16px; display: flex; flex-direction: column">
+    <sc-for list="{{ toggles }}" as="t" hint-placeholder-count="4">
+      <div style="display: flex; justify-content: space-between; align-items: center; min-height: 50px; border-bottom: 1px solid #EEE8DA; gap: 12px">
+        <span style="display: flex; flex-direction: column"><span style="font-size: 14px; font-weight: 700">{{ t.label }}</span><span style="font-size: 12px; font-weight: 600; color: #5B6661">{{ t.hint }}</span></span>
+        <sc-if value="{{ t.on }}" hint-placeholder-val="{{ true }}">
+          <button type="button" role="switch" aria-checked="true" aria-label="{{ t.label }}" onClick="{{ t.flip }}" style="width: 52px; height: 32px; border-radius: 999px; border: none; background: #0F6B5C; position: relative; cursor: pointer; flex-shrink: 0"><span style="position: absolute; top: 4px; right: 4px; width: 24px; height: 24px; border-radius: 50%; background: #FFFFFF"></span></button>
+        </sc-if>
+        <sc-if value="{{ t.off }}" hint-placeholder-val="{{ false }}">
+          <button type="button" role="switch" aria-checked="false" aria-label="{{ t.label }}" onClick="{{ t.flip }}" style="width: 52px; height: 32px; border-radius: 999px; border: none; background: #CFC7B5; position: relative; cursor: pointer; flex-shrink: 0"><span style="position: absolute; top: 4px; left: 4px; width: 24px; height: 24px; border-radius: 50%; background: #FFFFFF"></span></button>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+
+  <span style="font-size: 12px; font-weight: 800; color: #5B6661; letter-spacing: 0.06em; margin-top: 4px">SCREEN TIME &amp; ACCOUNT</span>
+  <div style="background: #FFFFFF; border-radius: 18px; padding: 2px 16px; display: flex; flex-direction: column">
+    <div style="display: flex; justify-content: space-between; align-items: center; min-height: 46px; border-bottom: 1px solid #EEE8DA"><span style="font-size: 14px; font-weight: 700">Daily limit</span><span style="font-size: 14px; font-weight: 800; color: #0F6B5C">25 min</span></div>
+    <a href="AddChild.dc.html" style="display: flex; justify-content: space-between; align-items: center; min-height: 46px; border-bottom: 1px solid #EEE8DA; text-decoration: none; color: #23302C"><span style="font-size: 14px; font-weight: 700">Child profiles</span><span style="font-size: 14px; font-weight: 800; color: #0F6B5C">3 of 6 ›</span></a>
+    <a href="Paywall.dc.html" style="display: flex; justify-content: space-between; align-items: center; min-height: 46px; border-bottom: 1px solid #EEE8DA; text-decoration: none; color: #23302C"><span style="font-size: 14px; font-weight: 700">Plan</span><span style="font-size: 14px; font-weight: 800; color: #0F6B5C">Free · Upgrade ›</span></a>
+    <div style="display: flex; justify-content: space-between; align-items: center; min-height: 46px"><span style="font-size: 14px; font-weight: 700">Privacy &amp; data</span><span style="font-size: 14px; font-weight: 800; color: #0F6B5C">Export or delete ›</span></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { translit: true, tajwid: true, music: false, upload: false };
+}
+renderVals() {
+const s = this.state;
+const rows = [
+{ key: 'translit', label: 'Show transliteration', hint: 'Latin letters under each ayah' },
+{ key: 'tajwid', label: 'Colour-coded tajwid', hint: 'Colours for each tajwid rule' },
+{ key: 'music', label: 'Background sounds', hint: 'Off = voice only' },
+{ key: 'upload', label: 'Back up recordings', hint: 'Off = recordings stay on this phone' }
+];
+return {
+toggles: rows.map((r) => ({
+label: r.label,
+hint: r.hint,
+on: !!s[r.key],
+off: !s[r.key],
+flip: () => this.setState({ [r.key]: !s[r.key] })
+}))
+};
+}
+}
+</script>
+</body>
+</html>

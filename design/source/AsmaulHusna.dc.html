@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Asma'ul Husna</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Amiri+Quran&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #EFF6F3; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 12px; padding: 48px 18px 20px; overflow: hidden">
+  <div style="display: flex; align-items: center; gap: 12px">
+    <a href="Home.dc.html" aria-label="Back to map" style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></a>
+    <div style="display: flex; flex-direction: column"><h1 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-size: 23px; font-weight: 800; line-height: 1.1">The 99 Names of Allah</h1><span style="font-size: 12px; font-weight: 700; color: #4F5A55">6 of 99 learned · voice-only nasheed</span></div>
+  </div>
+  <div style="background: #0F6B5C; color: #FFFFFF; border-radius: 22px; padding: 18px; display: flex; flex-direction: column; align-items: center; gap: 6px">
+    <span lang="ar" style="font-family: 'Amiri Quran', serif; font-size: 52px; line-height: 1.5">{{ cur.ar }}</span>
+    <span style="font-family: 'Baloo 2', sans-serif; font-size: 22px; font-weight: 800">{{ cur.tr }}</span>
+    <span style="font-size: 15px; font-weight: 700; color: #DCEFE9">{{ cur.en }}</span>
+    <button type="button" style="margin-top: 6px; min-height: 44px; padding: 0 18px; border-radius: 999px; border: none; background: #F2B33D; color: #23302C; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer">Listen</button>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+    <sc-for list="{{ names }}" as="n" hint-placeholder-count="9">
+      <button type="button" onClick="{{ n.pick }}" style="min-height: 84px; border-radius: 16px; border: {{ n.border }}; background: {{ n.bg }}; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; cursor: pointer; font-family: 'Nunito', sans-serif; color: #23302C; opacity: {{ n.op }}">
+        <span lang="ar" style="font-family: 'Amiri Quran', serif; font-size: 22px; line-height: 1.6">{{ n.ar }}</span>
+        <span style="font-size: 11px; font-weight: 800">{{ n.tr }}</span>
+      </button>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { i: 0 }; }
+renderVals() {
+const N = [
+{ ar: 'الرَّحْمَٰنُ', tr: 'Ar-Rahman', en: 'The Most Merciful' },
+{ ar: 'الرَّحِيمُ', tr: 'Ar-Rahim', en: 'The Most Kind' },
+{ ar: 'الْمَلِكُ', tr: 'Al-Malik', en: 'The King' },
+{ ar: 'الْقُدُّوسُ', tr: 'Al-Quddus', en: 'The Most Pure' },
+{ ar: 'السَّلَامُ', tr: 'As-Salam', en: 'The Source of Peace' },
+{ ar: 'الْمُؤْمِنُ', tr: "Al-Mu'min", en: 'The Giver of Safety' },
+{ ar: 'الْمُهَيْمِنُ', tr: 'Al-Muhaymin', en: 'The Protector' },
+{ ar: 'الْعَزِيزُ', tr: "Al-'Aziz", en: 'The Almighty' },
+{ ar: 'الْجَبَّارُ', tr: 'Al-Jabbar', en: 'The Compeller' }
+];
+const i = this.state.i;
+return {
+cur: N[i],
+names: N.map((n, k) => ({ ar: n.ar, tr: n.tr, op: k < 6 ? 1 : 0.55, border: k === i ? '3px solid #0F6B5C' : '2px solid #D3E4DC', bg: k === i ? '#DCEFE9' : '#FFFFFF', pick: () => this.setState({ i: k }) }))
+};
+}
+}
+</script>
+</body>
+</html>

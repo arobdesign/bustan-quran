@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hafalan_memorise">Mémoriser · %1$s</string>
+    <string name="hafalan_ayah_of">Verset %1$d sur %2$d</string>
+    <string name="hafalan_step_listen">1 · Écouter</string>
+    <string name="hafalan_step_repeat">2 · Répéter</string>
+    <string name="hafalan_step_own">3 · Tout seul</string>
+    <string name="hafalan_step_progress">%1$d sur %2$d</string>
+    <string name="hafalan_step_locked">verrouillé</string>
+    <string name="hafalan_reciter">Récitant : voix d’enfant</string>
+    <string name="hafalan_speed">Vitesse %1$s×</string>
+    <string name="hafalan_repeat">Répéter %1$d×</string>
+    <string name="hafalan_prompt">À toi ! Lis le verset %1$d après le récitant.</string>
+    <string name="hafalan_prev_ayah">Verset précédent</string>
+    <string name="hafalan_record">Enregistrer ma lecture</string>
+    <string name="hafalan_play">Lancer le récitant</string>
+    <!-- Artboard 16 · My hafalan -->
+    <string name="hafalan_map_title">Ma mémorisation</string>
+    <string name="hafalan_map_review_box">Boîte de révision du jour</string>
+    <string name="hafalan_map_review_count">%1$d sur %2$d faits</string>
+    <string name="hafalan_map_task_done">Tâche terminée</string>
+    <string name="hafalan_map_start">Commencer ›</string>
+    <string name="hafalan_map_juz_title">Juz \'Amma · %1$d sourates</string>
+    <string name="hafalan_map_juz_range">Sourate %1$d à %2$d</string>
+    <string name="hafalan_map_legend_memorised">Mémorisé</string>
+    <string name="hafalan_map_legend_review">À réviser</string>
+    <string name="hafalan_map_legend_learning">En cours</string>
+    <string name="hafalan_map_legend_not_yet">Pas encore</string>
+</resources>

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Memorise Surah Quraysh</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Amiri+Quran&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FBF6EC; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column">
+
+  <div style="background: #0F6B5C; color: #FFFFFF; padding: 44px 16px 16px; display: flex; flex-direction: column; gap: 14px; border-radius: 0 0 28px 28px">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+      <a href="Home.dc.html" aria-label="Back to map" style="width: 44px; height: 44px; border-radius: 14px; background: #0A5A4D; display: flex; align-items: center; justify-content: center">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+      </a>
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <span style="font-family: 'Baloo 2', sans-serif; font-size: 21px; font-weight: 800; line-height: 1.1">Surah Quraysh</span>
+        <span style="font-size: 12px; font-weight: 700; color: #CDE7DF">Surah 106 · 4 ayat · Makki</span>
+      </div>
+      <span style="font-family: 'Amiri Quran', serif; font-size: 22px; line-height: 1; width: 44px; text-align: center" lang="ar">قريش</span>
+    </div>
+
+    <div role="radiogroup" aria-label="Loop mode" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; background: #0A5A4D; border-radius: 999px; padding: 4px">
+      <sc-if value="{{ isAyah }}" hint-placeholder-val="{{ true }}">
+        <button type="button" role="radio" aria-checked="true" onClick="{{ setAyah }}" style="min-height: 44px; border: none; border-radius: 999px; background: #F2B33D; color: #23302C; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer">Loop per ayah</button>
+        <button type="button" role="radio" aria-checked="false" onClick="{{ setSurah }}" style="min-height: 44px; border: none; border-radius: 999px; background: transparent; color: #FFFFFF; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer">Loop whole surah</button>
+      </sc-if>
+      <sc-if value="{{ isSurah }}" hint-placeholder-val="{{ false }}">
+        <button type="button" role="radio" aria-checked="false" onClick="{{ setAyah }}" style="min-height: 44px; border: none; border-radius: 999px; background: transparent; color: #FFFFFF; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer">Loop per ayah</button>
+        <button type="button" role="radio" aria-checked="true" onClick="{{ setSurah }}" style="min-height: 44px; border: none; border-radius: 999px; background: #F2B33D; color: #23302C; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer">Loop whole surah</button>
+      </sc-if>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1; padding: 14px 16px 8px; display: flex; flex-direction: column; gap: 10px; overflow: hidden">
+    <p lang="ar" dir="rtl" style="margin: 0; text-align: center; font-family: 'Amiri Quran', serif; font-size: 20px; line-height: 1.8; color: #5B6661">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+    <sc-for list="{{ items }}" as="item" hint-placeholder-count="4">
+      <sc-if value="{{ item.active }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ item.pick }}" aria-label="{{ item.label }}" aria-current="true" style="text-align: left; border: 3px solid #F2B33D; background: #FFF4D6; border-radius: 18px; padding: 8px 12px 10px; display: flex; flex-direction: column; gap: 2px; cursor: pointer; font-family: 'Nunito', sans-serif; color: #23302C">
+          <span style="display: flex; justify-content: space-between; align-items: center; width: 100%">
+            <span style="font-size: 12px; font-weight: 800; color: #8A5A10; background: #FCE7B8; border-radius: 999px; padding: 2px 10px">{{ item.badge }}</span>
+            <span style="display: flex; gap: 3px; align-items: flex-end; height: 16px" aria-hidden="true"><span style="width: 4px; height: 8px; background: #0F6B5C; border-radius: 2px"></span><span style="width: 4px; height: 16px; background: #0F6B5C; border-radius: 2px"></span><span style="width: 4px; height: 11px; background: #0F6B5C; border-radius: 2px"></span><span style="width: 4px; height: 14px; background: #0F6B5C; border-radius: 2px"></span></span>
+          </span>
+          <span lang="ar" dir="rtl" style="display: block; width: 100%; font-family: 'Amiri Quran', serif; font-size: 27px; line-height: 1.85; text-align: right">{{ item.ar }} <span style="color: #0F6B5C">{{ item.num }}</span></span>
+          <span style="font-size: 13px; font-weight: 700; color: #4F5A55">{{ item.en }}</span>
+        </button>
+      </sc-if>
+      <sc-if value="{{ item.inactive }}" hint-placeholder-val="{{ true }}">
+        <button type="button" onClick="{{ item.pick }}" aria-label="{{ item.label }}" style="text-align: left; border: 2px solid transparent; background: #FFFFFF; border-radius: 18px; padding: 8px 12px 10px; display: flex; flex-direction: column; gap: 2px; cursor: pointer; font-family: 'Nunito', sans-serif; color: #23302C; box-shadow: 0 2px 0 #EADFC8">
+          <span lang="ar" dir="rtl" style="display: block; width: 100%; font-family: 'Amiri Quran', serif; font-size: 23px; line-height: 1.85; text-align: right">{{ item.ar }} <span style="color: #0F6B5C">{{ item.num }}</span></span>
+          <span style="font-size: 12px; font-weight: 700; color: #5B6661">{{ item.en }}</span>
+        </button>
+      </sc-if>
+    </sc-for>
+  </div>
+
+  <div style="background: #FFFFFF; border-radius: 28px 28px 0 0; padding: 14px 18px 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 -2px 0 #EADFC8">
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <div style="display: flex; flex-direction: column">
+        <span style="font-family: 'Baloo 2', sans-serif; font-size: 17px; font-weight: 800; line-height: 1.2">{{ statusTop }}</span>
+        <span style="font-size: 13px; font-weight: 700; color: #5B6661">{{ statusSub }}</span>
+      </div>
+      <span style="display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 800; color: #0A4F44; background: #DCEFE9; border-radius: 999px; padding: 6px 10px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A4F44" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>
+        MP3 offline
+      </span>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 8px">
+      <span style="font-size: 13px; font-weight: 800; white-space: nowrap">{{ repeatLabel }}</span>
+      <div style="display: flex; gap: 6px; flex-grow: 1; justify-content: flex-end">
+        <sc-for list="{{ repeats }}" as="r" hint-placeholder-count="5">
+          <sc-if value="{{ r.sel }}" hint-placeholder-val="{{ false }}">
+            <button type="button" onClick="{{ r.pick }}" aria-pressed="true" style="min-width: 44px; min-height: 40px; border-radius: 12px; border: none; background: #0F6B5C; color: #FFFFFF; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer">{{ r.label }}</button>
+          </sc-if>
+          <sc-if value="{{ r.unsel }}" hint-placeholder-val="{{ true }}">
+            <button type="button" onClick="{{ r.pick }}" aria-pressed="false" style="min-width: 44px; min-height: 40px; border-radius: 12px; border: 2px solid #D9CDB2; background: #FFFFFF; color: #23302C; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer">{{ r.label }}</button>
+          </sc-if>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: space-between">
+      <button type="button" style="min-height: 40px; padding: 0 12px; border-radius: 999px; border: 2px solid #D9CDB2; background: #FFFFFF; font-family: 'Nunito', sans-serif; font-size: 12px; font-weight: 800; color: #23302C; cursor: pointer">Reciter: Child voice</button>
+      <div style="display: flex; align-items: center; gap: 14px">
+        <button type="button" onClick="{{ prev }}" aria-label="Previous ayah" style="width: 48px; height: 48px; border-radius: 50%; border: none; background: #EDE4D0; display: flex; align-items: center; justify-content: center; cursor: pointer">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6l-8 6 8 6zM6 6v12"></path></svg>
+        </button>
+        <sc-if value="{{ playing }}" hint-placeholder-val="{{ false }}">
+          <button type="button" onClick="{{ toggle }}" aria-label="Pause" style="width: 68px; height: 68px; border-radius: 50%; border: 5px solid #CDE7DF; background: #0F6B5C; display: flex; align-items: center; justify-content: center; cursor: pointer">
+            <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" fill="#FFFFFF"></rect><rect x="14" y="5" width="4" height="14" rx="1" fill="#FFFFFF"></rect></svg>
+          </button>
+        </sc-if>
+        <sc-if value="{{ paused }}" hint-placeholder-val="{{ true }}">
+          <button type="button" onClick="{{ toggle }}" aria-label="Play" style="width: 68px; height: 68px; border-radius: 50%; border: 5px solid #CDE7DF; background: #0F6B5C; display: flex; align-items: center; justify-content: center; cursor: pointer">
+            <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="#FFFFFF"></path></svg>
+          </button>
+        </sc-if>
+        <button type="button" onClick="{{ next }}" aria-label="Next ayah" style="width: 48px; height: 48px; border-radius: 50%; border: none; background: #EDE4D0; display: flex; align-items: center; justify-content: center; cursor: pointer">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l8 6-8 6zM18 6v12"></path></svg>
+        </button>
+      </div>
+      <button type="button" style="min-height: 40px; padding: 0 12px; border-radius: 999px; border: 2px solid #D9CDB2; background: #FFFFFF; font-family: 'Nunito', sans-serif; font-size: 12px; font-weight: 800; color: #23302C; cursor: pointer">0.75×</button>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { mode: 'ayah', current: 1, target: 3, count: 0, playing: false };
+}
+componentWillUnmount() {
+this.stopTimer();
+}
+stopTimer() {
+if (this.timer) { clearInterval(this.timer); this.timer = null; }
+}
+tick() {
+const s = this.state;
+const max = s.target === 0 ? Infinity : s.target;
+if (s.mode === 'ayah') {
+const n = s.count + 1;
+if (n < max) { this.setState({ count: n }); }
+else if (s.current < 4) { this.setState({ current: s.current + 1, count: 0 }); }
+else { this.stopTimer(); this.setState({ playing: false, count: 0 }); }
+} else {
+if (s.current < 4) { this.setState({ current: s.current + 1 }); }
+else {
+const n = s.count + 1;
+if (n < max) { this.setState({ current: 1, count: n }); }
+else { this.stopTimer(); this.setState({ playing: false, current: 1, count: 0 }); }
+}
+}
+}
+toggle() {
+if (this.state.playing) { this.stopTimer(); this.setState({ playing: false }); }
+else { this.stopTimer(); this.timer = setInterval(() => this.tick(), 1800); this.setState({ playing: true }); }
+}
+renderVals() {
+const s = this.state;
+const ayat = [
+{ ar: 'لِإِيلَافِ قُرَيْشٍ', num: '﴿١﴾', en: 'So that the Quraysh feel safe and at home,' },
+{ ar: 'إِيلَافِهِمْ رِحْلَةَ الشِّتَاءِ وَالصَّيْفِ', num: '﴿٢﴾', en: 'safe on their journeys in winter and summer.' },
+{ ar: 'فَلْيَعْبُدُوا رَبَّ هَٰذَا الْبَيْتِ', num: '﴿٣﴾', en: 'So let them worship the Lord of this House (the Ka\'bah),' },
+{ ar: 'الَّذِي أَطْعَمَهُم مِّن جُوعٍ وَآمَنَهُم مِّنْ خَوْفٍ', num: '﴿٤﴾', en: 'who fed them in hunger and kept them safe from fear.' }
+];
+const total = s.target === 0 ? '∞' : String(s.target);
+const isAyah = s.mode === 'ayah';
+const badge = isAyah ? ('Repeat ' + (s.count + 1) + ' of ' + total) : (s.playing ? 'Playing' : 'Ready');
+const items = ayat.map((a, i) => ({
+...a,
+active: s.current === i + 1,
+inactive: s.current !== i + 1,
+badge: 'Ayah ' + (i + 1) + ' · ' + badge,
+label: 'Play ayah ' + (i + 1),
+pick: () => this.setState({ current: i + 1, count: 0 })
+}));
+const repeats = [{ label: '1×', v: 1 }, { label: '3×', v: 3 }, { label: '5×', v: 5 }, { label: '10×', v: 10 }, { label: '∞', v: 0 }].map((r) => ({
+label: r.label,
+sel: s.target === r.v,
+unsel: s.target !== r.v,
+pick: () => this.setState({ target: r.v, count: 0 })
+}));
+return {
+items,
+repeats,
+isAyah,
+isSurah: !isAyah,
+playing: s.playing,
+paused: !s.playing,
+repeatLabel: isAyah ? 'Repeat each ayah' : 'Repeat the surah',
+statusTop: isAyah ? ('Ayah ' + s.current + ' of 4') : ('Whole surah · ayah ' + s.current + ' of 4'),
+statusSub: isAyah ? ('Repeat ' + (s.count + 1) + ' of ' + total + ', then next ayah') : ('Surah loop ' + (s.count + 1) + ' of ' + total),
+setAyah: () => this.setState({ mode: 'ayah', count: 0 }),
+setSurah: () => this.setState({ mode: 'surah', current: 1, count: 0 }),
+toggle: () => this.toggle(),
+prev: () => this.setState({ current: Math.max(1, s.current - 1), count: 0 }),
+next: () => this.setState({ current: Math.min(4, s.current + 1), count: 0 })
+};
+}
+}
+</script>
+</body>
+</html>

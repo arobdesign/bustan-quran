@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- لوحة 17 · درس الحروف الهجائية -->
+    <string name="hijaiyah_lesson_title">الحرف %1$d · %2$s</string>
+    <string name="hijaiyah_lesson_subtitle">درس القاعدة ١</string>
+    <string name="hijaiyah_lesson_counter">%1$d / %2$d</string>
+    <string name="hijaiyah_trace_hint">تتبّع بإصبعك، بدءًا من النقطة الصفراء</string>
+    <string name="hijaiyah_trace_done">أحسنت — لقد تتبّعته!</string>
+    <string name="hijaiyah_trace_start">١</string>
+    <string name="hijaiyah_forms_title">يتغيّر شكل %1$s في الكلمة</string>
+    <string name="hijaiyah_form_isolated">منفرد</string>
+    <string name="hijaiyah_form_initial">أول</string>
+    <string name="hijaiyah_form_medial">وسط</string>
+    <string name="hijaiyah_form_final">آخر</string>
+    <string name="hijaiyah_example_heading">كلمة مثال</string>
+    <string name="hijaiyah_hear">اسمع %1$s</string>
+    <string name="hijaiyah_say">قلها · سجّل</string>
+    <string name="hijaiyah_next">الحرف التالي</string>
+    <string name="hijaiyah_empty">لا توجد حروف في حزمة المحتوى بعد.</string>
+
+    <!-- لوحة 18 · درس التجويد (القلقلة) -->
+    <string name="tajwid_lesson_badge">تجويد · القاعدة %1$d من %2$d</string>
+    <string name="tajwid_lesson_tip">سهلة الحفظ: «قطب جد»</string>
+    <string name="tajwid_example_label">مثال · الوقف على آخر %1$s الآية %2$d</string>
+    <string name="tajwid_example_pending">يصل مثال الآية مع حزمة المصحف الكاملة.</string>
+    <string name="tajwid_hear_bounce">اسمع القلقلة</string>
+    <string name="tajwid_check_title">اختبار سريع: أي حرف يُقلقل؟</string>
+    <string name="tajwid_check_idle">اضغط على حرف.</string>
+    <string name="tajwid_check_right">نعم! %1$s من الحروف الخمسة المقلقلة.</string>
+    <string name="tajwid_check_wrong">حاول مرة أخرى. انظر إلى الحروف الخمسة أعلاه.</string>
+    <string name="tajwid_empty">لا توجد قاعدة تجويد في حزمة المحتوى بعد.</string>
+    <string name="tajwid_desc_ghunnah">صوت أنفي. اُمده مقدار حركتين إذا جاء النون أو الميم مشدّدًا أو ساكنًا.</string>
+    <string name="tajwid_desc_idgham_bi">إدغام بغنة: يلتقي النون بأحد حروف ي ن م و فينتقل الصوت إلى الحرف التالي.</string>
+    <string name="tajwid_desc_idgham_bila">إدغام بغير غنة: يلتقي النون باللام أو الراء فيُدغم إدغامًا كاملًا.</string>
+    <string name="tajwid_desc_iqlab">إقلاب: النون بعد الباء تصير ميمًا مع غنة.</string>
+    <string name="tajwid_desc_ikhfa">إخفاء: النون بعد أحد الحروف الخمسة عشر تُنطق بين الإظهار والإدغام مع غنة.</string>
+    <string name="tajwid_desc_izhar">إظهار: النون بعد ء ه ع ح غ خ تُنطق واضحة بلا غنة.</string>
+    <string name="tajwid_desc_qalqalah">صوت مرتجف. إذا جاءت هذه الحروف ساكنة ارتجف الصوت قليلًا.</string>
+    <string name="tajwid_desc_madd">مدّ: اُمطط الصوت مقدار حركتين إلى ست حركات.</string>
+    <string name="tajwid_desc_generic">قاعدة تجويد من حزمة المحتوى.</string>
+</resources>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Restore purchases</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F4F1EA; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 16px; padding: 48px 20px 28px">
+  <a href="Paywall.dc.html" aria-label="Back" style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+  </a>
+  <h1 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.15">Restore purchases</h1>
+  <p style="margin: 0; font-size: 15px; font-weight: 600; color: #5B6661">We checked the Google Play account on this phone.</p>
+  <div style="background: #FFFFFF; border-radius: 20px; padding: 16px; display: flex; align-items: center; gap: 14px">
+    <div style="width: 48px; height: 48px; border-radius: 14px; background: #DCEFE9; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0F6B5C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>
+    </div>
+    <div style="display: flex; flex-direction: column">
+      <span style="font-size: 16px; font-weight: 800">30 Juz Lifetime</span>
+      <span style="font-size: 13px; font-weight: 600; color: #5B6661">Bought on [date] · active</span>
+    </div>
+  </div>
+  <div style="background: #FFFFFF; border-radius: 20px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px">
+    <span style="font-size: 14px; font-weight: 800">Can't find your purchase?</span>
+    <span style="font-size: 13px; font-weight: 600; color: #5B6661">Make sure you are signed in with the same Google account you used to buy. Family Library sharing is supported.</span>
+  </div>
+  <div style="flex-grow: 1"></div>
+  <a href="ParentDashboard.dc.html" style="min-height: 56px; border-radius: 999px; background: #0F6B5C; color: #FFFFFF; font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; display: flex; align-items: center; justify-content: center; text-decoration: none">Done</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

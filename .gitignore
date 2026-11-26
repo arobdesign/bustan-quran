@@ -1,0 +1,39 @@
+# Gradle / Android / Kotlin Multiplatform — build artifacts
+.gradle/
+build/
+*/build/
+**/build/
+.kotlin/
+captures/
+.cxx/
+*.hprof
+*.class
+*.apk
+*.aab
+*.aar
+app/release/
+app/debug/
+
+# IDE / editor
+.idea/
+*.iml
+.vscode/
+local.properties
+
+# macOS
+.DS_Store
+
+# Secrets & signing
+*.jks
+*.keystore
+google-services.json
+service-account*.json
+*.env
+.env.*
+
+# Importer HTTP cache (regenerate with tools/scripts/fetch_quran_content.py)
+android-app/tools/scripts/.cache/
+
+# Logs / temp
+*.log
+/tmp/

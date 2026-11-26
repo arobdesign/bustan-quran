@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Teacher mode</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F4F1EA; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 12px; padding: 48px 18px 20px; overflow: hidden">
+  <div style="display: flex; justify-content: space-between; align-items: flex-start">
+    <div style="display: flex; flex-direction: column">
+      <span style="font-size: 12px; font-weight: 800; color: #5B6661; letter-spacing: 0.06em">TEACHER MODE</span>
+      <h1 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-size: 23px; font-weight: 800; line-height: 1.15">Weekend Madrasah · Group B</h1>
+    </div>
+    <span style="font-size: 12px; font-weight: 800; background: #FFFFFF; border-radius: 10px; padding: 6px 10px; white-space: nowrap">Code [QPK-4821]</span>
+  </div>
+
+  <div style="background: #0F6B5C; color: #FFFFFF; border-radius: 20px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
+    <span style="font-size: 12px; font-weight: 800; color: #CDE7DF">THIS WEEK'S TASK</span>
+    <span style="font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; line-height: 1.15">Memorise Al-Kawthar and send a recording</span>
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <span style="font-size: 13px; font-weight: 700">Due Sunday</span>
+      <span style="font-size: 13px; font-weight: 800; background: #0A5A4D; border-radius: 999px; padding: 4px 10px">[7] of [12] sent</span>
+    </div>
+    <div style="height: 8px; border-radius: 999px; background: #0A5A4D; overflow: hidden"><div style="width: 58%; height: 100%; background: #F2B33D"></div></div>
+  </div>
+
+  <div style="display: flex; gap: 8px">
+    <button type="button" style="flex: 1; min-height: 48px; border-radius: 14px; border: none; background: #23302C; color: #FFFFFF; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer">New task</button>
+    <button type="button" style="flex: 1; min-height: 48px; border-radius: 14px; border: 2px solid #23302C; background: #FFFFFF; color: #23302C; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer">Start class quiz</button>
+    <button type="button" style="flex: 1; min-height: 48px; border-radius: 14px; border: 2px solid #23302C; background: #FFFFFF; color: #23302C; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer">Export PDF</button>
+  </div>
+
+  <span style="font-size: 14px; font-weight: 800; margin-top: 2px">Students</span>
+  <div style="background: #FFFFFF; border-radius: 18px; padding: 4px 14px; display: flex; flex-direction: column">
+    <sc-for list="{{ students }}" as="s" hint-placeholder-count="6">
+      <div style="display: flex; align-items: center; gap: 10px; min-height: 54px; border-bottom: 1px solid #EEE8DA">
+        <span style="width: 34px; height: 34px; border-radius: 50%; background: {{ s.bg }}; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800">{{ s.initial }}</span>
+        <span style="display: flex; flex-direction: column; flex-grow: 1"><span style="font-size: 14px; font-weight: 800">{{ s.name }}</span><span style="font-size: 12px; font-weight: 600; color: #5B6661">{{ s.note }}</span></span>
+        <sc-if value="{{ s.sent }}" hint-placeholder-val="{{ true }}"><button type="button" style="min-height: 36px; padding: 0 12px; border-radius: 999px; border: 2px solid #0F6B5C; background: #FFFFFF; color: #0F6B5C; font-family: 'Nunito', sans-serif; font-size: 12px; font-weight: 800; cursor: pointer">Listen</button></sc-if>
+        <sc-if value="{{ s.waiting }}" hint-placeholder-val="{{ false }}"><span style="font-size: 12px; font-weight: 800; color: #8F3A1C; background: #FBE3D9; border-radius: 999px; padding: 4px 10px">Not yet</span></sc-if>
+      </div>
+    </sc-for>
+  </div>
+  <p style="margin: 0; font-size: 12px; font-weight: 600; color: #5B6661">Parents approve each child joining the class. Recordings are shared only with this teacher.</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+const list = [
+['Aisha', 'Sent · all 3 ayat', true, '#DCEFE9'],
+['Bilal', 'Sent · check ayah 3', true, '#D7E8F5'],
+['Hamza', 'Not started', false, '#FCE7B8'],
+['Layla', 'Sent · all 3 ayat', true, '#F7D3C5'],
+['Omar', 'Practising · 2 of 3', false, '#E4E0F3'],
+['Zainab', 'Sent · all 3 ayat', true, '#DCEFE9']
+];
+return { students: list.map((s) => ({ name: s[0], initial: s[0].charAt(0), note: s[1], sent: s[2], waiting: !s[2], bg: s[3] })) };
+}
+}
+</script>
+</body>
+</html>

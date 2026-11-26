@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hafalan_memorise">Auswendig lernen · %1$s</string>
+    <string name="hafalan_ayah_of">Vers %1$d von %2$d</string>
+    <string name="hafalan_step_listen">1 · Hören</string>
+    <string name="hafalan_step_repeat">2 · Nachsprechen</string>
+    <string name="hafalan_step_own">3 · Allein</string>
+    <string name="hafalan_step_progress">%1$d von %2$d</string>
+    <string name="hafalan_step_locked">gesperrt</string>
+    <string name="hafalan_reciter">Rezitator: Kinderstimme</string>
+    <string name="hafalan_speed">Tempo %1$s×</string>
+    <string name="hafalan_repeat">%1$d× wiederholen</string>
+    <string name="hafalan_prompt">Du bist dran! Lies Vers %1$d dem Rezitator nach.</string>
+    <string name="hafalan_prev_ayah">Vorheriger Vers</string>
+    <string name="hafalan_record">Meine Lesung aufnehmen</string>
+    <string name="hafalan_play">Rezitator abspielen</string>
+    <!-- Artboard 16 · My hafalan -->
+    <string name="hafalan_map_title">Mein Hifz</string>
+    <string name="hafalan_map_review_box">Wiederholungsbox von heute</string>
+    <string name="hafalan_map_review_count">%1$d von %2$d erledigt</string>
+    <string name="hafalan_map_task_done">Aufgabe erledigt</string>
+    <string name="hafalan_map_start">Starten ›</string>
+    <string name="hafalan_map_juz_title">Juz \'Amma · %1$d Suren</string>
+    <string name="hafalan_map_juz_range">Sure %1$d bis %2$d</string>
+    <string name="hafalan_map_legend_memorised">Auswendig</string>
+    <string name="hafalan_map_legend_review">Zu wiederholen</string>
+    <string name="hafalan_map_legend_learning">Am Lernen</string>
+    <string name="hafalan_map_legend_not_yet">Noch nicht</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <!-- Debug-only screen harness for P-18 design reviews. -->
+        <activity
+            android:name="com.bustanquran.shared.debug.DesignPreviewActivity"
+            android:exported="true"
+            android:label="Design preview"
+            android:theme="@android:style/Theme.Material.Light.NoActionBar" />
+    </application>
+
+</manifest>

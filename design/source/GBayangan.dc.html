@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shadow Match game</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Amiri:wght@700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FBF6EC; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 16px; padding: 48px 18px 24px">
+  <div style="display: flex; align-items: center; justify-content: space-between">
+    <a href="GameList.dc.html" aria-label="Back" style="width: 48px; height: 48px; border-radius: 16px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 #EADFC8"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></a>
+    <span style="font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800">Shadow Match</span>
+    <span style="font-size: 14px; font-weight: 800; background: #FFFFFF; border-radius: 999px; padding: 8px 12px">{{ done }}/3</span>
+  </div>
+  <p style="margin: 0; font-size: 16px; font-weight: 800; text-align: center">Tap a letter, then tap its shadow</p>
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; flex-grow: 1; align-content: center">
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <sc-for list="{{ letters }}" as="l" hint-placeholder-count="3">
+        <button type="button" onClick="{{ l.pick }}" aria-label="{{ l.label }}" style="height: 120px; border-radius: 22px; border: none; background: {{ l.bg }}; box-shadow: {{ l.ring }}; font-family: 'Amiri', serif; font-size: 68px; font-weight: 700; color: #23302C; cursor: pointer">{{ l.g }}</button>
+      </sc-for>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <sc-for list="{{ shadows }}" as="s" hint-placeholder-count="3">
+        <button type="button" onClick="{{ s.drop }}" aria-label="{{ s.label }}" style="height: 120px; border-radius: 22px; border: 3px dashed #CDBF9F; background: #FFFFFF; font-family: 'Amiri', serif; font-size: 68px; font-weight: 700; color: {{ s.color }}; cursor: pointer">{{ s.g }}</button>
+      </sc-for>
+    </div>
+  </div>
+  <p style="margin: 0; text-align: center; font-size: 14px; font-weight: 800; color: #4F5A55">{{ msg }}</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { sel: null, matched: [], msg: 'Look at the dots!' }; }
+renderVals() {
+const s = this.state;
+const L = [{ g: 'ب', n: 'Ba', c: '#FCE7B8' }, { g: 'ت', n: 'Ta', c: '#DCEFE9' }, { g: 'ث', n: 'Tha', c: '#D7E8F5' }];
+const order = [2, 0, 1];
+return {
+done: s.matched.length,
+msg: s.msg,
+letters: L.map((x, i) => ({ g: x.g, label: 'Letter ' + x.n, bg: x.c, ring: s.sel === i ? '0 0 0 4px #0F6B5C' : '0 3px 0 #EADFC8', pick: () => this.setState({ sel: i }) })),
+shadows: order.map((i) => ({ g: L[i].g, label: 'Shadow ' + (order.indexOf(i) + 1), color: s.matched.indexOf(i) !== -1 ? '#0F6B5C' : '#D9CDB2', drop: () => {
+if (s.sel === null) return;
+if (s.sel === i) this.setState({ matched: s.matched.concat([i]), sel: null, msg: 'MashaAllah! ' + L[i].n + ' matches.' });
+else this.setState({ sel: null, msg: 'Count the dots and try again.' });
+} }))
+};
+}
+}
+</script>
+</body>
+</html>

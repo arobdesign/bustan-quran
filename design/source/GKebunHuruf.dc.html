@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Letter Garden game</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Amiri+Quran&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #DDF0F8; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; position: relative; overflow: hidden">
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 48px 18px 10px">
+    <a href="GameList.dc.html" aria-label="Back" style="width: 48px; height: 48px; border-radius: 16px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></a>
+    <span style="font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800">Letter Garden</span>
+    <span style="font-size: 14px; font-weight: 800; background: #FFFFFF; border-radius: 999px; padding: 8px 12px">{{ bloomed }}/4</span>
+  </div>
+  <p style="margin: 8px 20px 0; background: #FFFFFF; border-radius: 20px; padding: 12px 16px; font-size: 17px; font-weight: 800; text-align: center">Water a flower, then say its letter!</p>
+  <div style="position: relative; flex-grow: 1">
+    <div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 260px; background: #9ED3B5; border-radius: 60px 60px 0 0"></div>
+    <div style="position: absolute; left: 14px; right: 14px; bottom: 90px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px">
+      <sc-for list="{{ flowers }}" as="f" hint-placeholder-count="4">
+        <button type="button" onClick="{{ f.water }}" aria-label="{{ f.label }}" style="border: none; background: transparent; padding: 0; display: flex; flex-direction: column; align-items: center; cursor: pointer">
+          <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}"><span style="width: 76px; height: 76px; border-radius: 50%; background: {{ f.color }}; box-shadow: 0 0 0 8px #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Amiri Quran', serif; font-size: 40px; line-height: 1; color: #23302C">{{ f.g }}</span></sc-if>
+          <sc-if value="{{ f.bud }}" hint-placeholder-val="{{ true }}"><span style="width: 40px; height: 52px; border-radius: 50% 50% 46% 46%; background: #3E8E7E; margin-top: 24px"></span></sc-if>
+          <span style="width: 6px; height: 90px; background: #3E8E7E"></span>
+        </button>
+      </sc-for>
+    </div>
+    <svg width="110" height="90" viewBox="0 0 110 90" aria-hidden="true" style="position: absolute; right: 18px; top: 24px"><rect x="20" y="30" width="60" height="44" rx="10" fill="#5B8DB8"></rect><path d="M80 44 L104 30" stroke="#5B8DB8" stroke-width="8" stroke-linecap="round"></path><path d="M30 30 Q50 6 70 30" stroke="#5B8DB8" stroke-width="6" fill="none"></path></svg>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { open: [0] }; }
+renderVals() {
+const f = [{ g: 'د', n: 'Dal', c: '#F2B33D' }, { g: 'ذ', n: 'Dhal', c: '#F7D3C5' }, { g: 'ر', n: 'Ra', c: '#E4E0F3' }, { g: 'ز', n: 'Zay', c: '#FCE7B8' }];
+const o = this.state.open;
+return {
+bloomed: o.length,
+flowers: f.map((x, i) => ({ g: x.g, color: x.c, label: 'Flower ' + x.n, open: o.indexOf(i) !== -1, bud: o.indexOf(i) === -1, water: () => { if (o.indexOf(i) === -1) this.setState({ open: o.concat([i]) }); } }))
+};
+}
+}
+</script>
+</body>
+</html>

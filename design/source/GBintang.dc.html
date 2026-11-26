@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Night Stars game</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Amiri:wght@700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#F2B33D}a:hover{color:#FCE7B8}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #1E2A4A; font-family: 'Nunito', sans-serif; color: #FFFFFF; display: flex; flex-direction: column; position: relative; overflow: hidden">
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 48px 18px 10px">
+    <a href="GameList.dc.html" aria-label="Back" style="width: 48px; height: 48px; border-radius: 16px; background: #2D3A5C; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></a>
+    <span style="font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800">Night Stars</span>
+    <span style="width: 48px"></span>
+  </div>
+  <div style="margin: 10px 20px 0; background: #2D3A5C; border-radius: 22px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between">
+    <span style="font-size: 17px; font-weight: 800">Tap this many stars</span>
+    <span style="display: flex; align-items: center; gap: 10px"><span lang="ar" style="font-family: 'Amiri', serif; font-size: 52px; font-weight: 700; line-height: 1; color: #F2B33D">٣</span><span style="font-size: 14px; font-weight: 800; color: #D8DEF0">thalatha</span></span>
+  </div>
+  <div style="position: relative; flex-grow: 1">
+    <sc-for list="{{ stars }}" as="s" hint-placeholder-count="8">
+      <button type="button" onClick="{{ s.tap }}" aria-label="{{ s.label }}" aria-pressed="{{ s.pressed }}" style="position: absolute; left: {{ s.x }}px; top: {{ s.y }}px; width: 72px; height: 72px; border: none; background: transparent; padding: 0; cursor: pointer">
+        <svg width="72" height="72" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z" fill="{{ s.fill }}"></path></svg>
+      </button>
+    </sc-for>
+  </div>
+  <p style="margin: 0 20px 36px; text-align: center; font-family: 'Baloo 2', sans-serif; font-size: 22px; font-weight: 800">{{ count }}</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { on: [] }; }
+renderVals() {
+const pos = [[40, 30], [170, 10], [280, 60], [90, 150], [230, 180], [30, 290], [160, 320], [280, 300]];
+const on = this.state.on;
+const ar = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨'];
+return {
+count: on.length === 3 ? 'MashaAllah! ٣ = 3' : 'Counted: ' + ar[on.length],
+stars: pos.map((p, i) => ({ x: p[0], y: p[1], label: 'Star ' + (i + 1), pressed: on.indexOf(i) !== -1 ? 'true' : 'false', fill: on.indexOf(i) !== -1 ? '#F2B33D' : '#4A5A86', tap: () => this.setState({ on: on.indexOf(i) !== -1 ? on.filter((x) => x !== i) : on.concat([i]) }) }))
+};
+}
+}
+</script>
+</body>
+</html>

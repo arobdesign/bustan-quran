@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_title">Games</string>
+    <string name="game_locked">Locked</string>
+    <string name="game_stage_little_stars">Ages 3–4</string>
+    <string name="game_stage_explorers">Ages 5–6</string>
+    <string name="game_stage_young_hafiz">Ages 7–10</string>
+    <string name="game_tagline_little_stars">Little Stars · listen, tap and trace</string>
+    <string name="game_tagline_explorers">Explorers · join letters, first memorising</string>
+    <string name="game_tagline_young_hafiz">Young Hafiz · build, continue, understand</string>
+
+    <string name="g1_name">Letter Balloons</string>
+    <string name="g1_goal">Letter sounds</string>
+    <string name="g2_name">Letter Garden</string>
+    <string name="g2_goal">Listen and repeat</string>
+    <string name="g3_name">Finger Trace</string>
+    <string name="g3_goal">Letter shapes</string>
+    <string name="g4_name">Shadow Match</string>
+    <string name="g4_goal">Similar letters</string>
+    <string name="g5_name">Surah Train</string>
+    <string name="g5_goal">Short surahs</string>
+    <string name="g6_name">Little Du\'a</string>
+    <string name="g6_goal">Daily du\'a</string>
+    <string name="g7_name">Harakat Fishing</string>
+    <string name="g7_goal">Fathah, kasrah, dammah</string>
+    <string name="g8_name">Night Stars</string>
+    <string name="g8_goal">Arabic numbers</string>
+    <string name="g9_name">Join the Letters</string>
+    <string name="g9_goal">Joined shapes</string>
+    <string name="g10_name">Letter Run</string>
+    <string name="g10_goal">Speed reading letters</string>
+    <string name="g11_name">Missing Word</string>
+    <string name="g11_goal">First hafalan</string>
+    <string name="g12_name">Order the Ayat</string>
+    <string name="g12_goal">Ayah order</string>
+    <string name="g13_name">Word Memory</string>
+    <string name="g13_goal">Qur\'an words</string>
+    <string name="g14_name">Copy the Reciter</string>
+    <string name="g14_goal">Talaqqi</string>
+    <string name="g15_name">Letter Market</string>
+    <string name="g15_goal">Reading words</string>
+    <string name="g16_name">Guess the Surah</string>
+    <string name="g16_goal">Know the surahs</string>
+    <string name="g17_name">Build the Ayah</string>
+    <string name="g17_goal">Hafalan</string>
+    <string name="g18_name">Build the Meaning</string>
+    <string name="g18_goal">Meaning</string>
+    <string name="g19_name">Tajwid Detective</string>
+    <string name="g19_goal">Tajwid</string>
+    <string name="g20_name">Continue the Ayah</string>
+    <string name="g20_goal">Murojaah</string>
+    <string name="g21_name">Surah Story Quiz</string>
+    <string name="g21_goal">Tadabbur</string>
+    <string name="g22_name">Hafalan Adventure</string>
+    <string name="g22_goal">Long-term goal</string>
+    <string name="g23_name">Family Challenge</string>
+    <string name="g23_goal">Learn together</string>
+    <string name="g24_name">Class Contest</string>
+    <string name="g24_goal">Teacher mode</string>
+
+    <string name="balon_prompt">Pop the letter \"%1$s\"</string>
+    <string name="balon_listen_hint">Tap the speaker to hear it again</string>
+    <string name="balon_level">Level %1$d</string>
+    <string name="balon_round">Round %1$d of %2$d</string>
+    <string name="balon_mascot_hint">%1$s has one dot below. Can you find it?</string>
+    <string name="balon_speaker_desc">Hear the letter again</string>
+    <string name="balon_balloon_desc">Balloon with letter %1$s</string>
+
+    <string name="game_susun_title">Build the Ayah</string>
+    <string name="game_susun_subtitle">Surah %1$s · Level 1 (with hints)</string>
+    <string name="game_susun_stage">%1$d/%2$d</string>
+    <string name="game_susun_basmala">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</string>
+    <string name="game_susun_instruction">Drag the words into Ayah %1$d</string>
+    <string name="game_susun_wrong">Not quite — try again</string>
+    <string name="game_susun_correct">That is Ayah %1$d. Well done!</string>
+    <string name="game_susun_listen">Listen</string>
+    <string name="game_susun_check">Check</string>
+    <string name="game_susun_slot_desc">Empty slot for a missing word</string>
+    <string name="game_susun_empty">There are no ayat in the content pack yet.</string>
+
+    <string name="game_sambung_title">Continue the Ayah</string>
+    <string name="game_sambung_subtitle">Murojaah · %1$s</string>
+    <string name="game_sambung_stage">%1$d / %2$d</string>
+    <string name="game_sambung_prompt_label">The reciter says…</string>
+    <string name="game_sambung_play_again">Hear it again</string>
+    <string name="game_sambung_question">What comes next?</string>
+    <string name="game_sambung_correct">Correct! That is Ayah %1$d.</string>
+    <string name="game_sambung_wrong">Not this one — listen again.</string>
+    <string name="game_sambung_next">Next</string>
+    <string name="game_sambung_option_desc">Continue with %1$s</string>
+    <string name="game_sambung_empty">There are not enough ayat for this game yet.</string>
+
+
+    <string name="reward_title">MashaAllah, %1$s!</string>
+    <string name="reward_title_generic">MashaAllah!</string>
+    <string name="reward_default_achievement">You built Ayah 3 of Al-Ikhlas</string>
+    <string name="reward_stars_desc">%1$d of %2$d stars</string>
+    <string name="reward_new_card">New card</string>
+    <string name="reward_card_name">The Camel</string>
+    <string name="reward_card_progress">Animals in the Qur’an · 4 of 12</string>
+    <string name="reward_next_ayah">Next ayah</string>
+    <string name="reward_back_to_map">Back to the map</string>
+</resources>

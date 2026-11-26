@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Daily du'a</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;family=Amiri+Quran&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FDF1EC; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 12px; padding: 48px 18px 20px; overflow: hidden">
+  <div style="display: flex; align-items: center; gap: 12px">
+    <a href="Home.dc.html" aria-label="Back to map" style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+    </a>
+    <div style="display: flex; flex-direction: column">
+      <h1 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-size: 24px; font-weight: 800; line-height: 1.1">Du'a Island</h1>
+      <span style="font-size: 12px; font-weight: 700; color: #6B4A3E">Little du'a for every day</span>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 8px; flex-wrap: wrap"><a href="AsmaulHusna.dc.html" style="min-height: 40px; padding: 0 14px; border-radius: 999px; background: #FFFFFF; color: #23302C; font-size: 13px; font-weight: 800; display: flex; align-items: center; text-decoration: none">99 Names</a><a href="RukunIslam.dc.html" style="min-height: 40px; padding: 0 14px; border-radius: 999px; background: #FFFFFF; color: #23302C; font-size: 13px; font-weight: 800; display: flex; align-items: center; text-decoration: none">Pillars, wudu &amp; salah</a><a href="RamadanMode.dc.html" style="min-height: 40px; padding: 0 14px; border-radius: 999px; background: #FFFFFF; color: #23302C; font-size: 13px; font-weight: 800; display: flex; align-items: center; text-decoration: none">Ramadan</a></div>
+
+  <sc-for list="{{ duas }}" as="d" hint-placeholder-count="6">
+    <sc-if value="{{ d.open }}" hint-placeholder-val="{{ false }}">
+      <div style="background: #FFFFFF; border-radius: 20px; padding: 14px; display: flex; flex-direction: column; gap: 8px; box-shadow: inset 0 0 0 3px #E0734F">
+        <button type="button" onClick="{{ d.toggle }}" aria-expanded="true" style="display: flex; align-items: center; gap: 12px; border: none; background: transparent; padding: 0; cursor: pointer; font-family: 'Nunito', sans-serif; color: #23302C; text-align: left">
+          <span style="width: 44px; height: 44px; border-radius: 14px; background: #F7D3C5; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-size: 18px; font-weight: 800; color: #8F3A1C">{{ d.n }}</span>
+          <span style="font-size: 16px; font-weight: 800; flex-grow: 1">{{ d.title }}</span>
+        </button>
+        <p dir="rtl" lang="ar" style="margin: 0; font-family: 'Amiri Quran', serif; font-size: 26px; line-height: 1.9; text-align: center">{{ d.ar }}</p>
+        <p style="margin: 0; font-size: 13px; font-weight: 700; color: #4F5A55; text-align: center">{{ d.en }}</p>
+        <div style="display: flex; gap: 8px; justify-content: center">
+          <button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: none; background: #E0734F; color: #FFFFFF; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer">Listen</button>
+          <button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 2px solid #E0734F; background: #FFFFFF; color: #B4532F; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer">Say it with me</button>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ d.closed }}" hint-placeholder-val="{{ true }}">
+      <button type="button" onClick="{{ d.toggle }}" aria-expanded="false" style="display: flex; align-items: center; gap: 12px; min-height: 60px; border-radius: 18px; border: none; background: #FFFFFF; padding: 8px 14px; cursor: pointer; font-family: 'Nunito', sans-serif; color: #23302C; text-align: left">
+        <span style="width: 40px; height: 40px; border-radius: 12px; background: #FBE3D9; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-size: 16px; font-weight: 800; color: #8F3A1C">{{ d.n }}</span>
+        <span style="font-size: 15px; font-weight: 800; flex-grow: 1">{{ d.title }}</span>
+        <sc-if value="{{ d.learned }}"><span style="font-size: 11px; font-weight: 800; color: #0A4F44; background: #DCEFE9; border-radius: 999px; padding: 3px 8px">Learned</span></sc-if>
+      </button>
+    </sc-if>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { open: 2 };
+}
+renderVals() {
+const list = [
+{ title: 'Before eating', ar: 'بِسْمِ اللَّهِ', en: 'In the name of Allah.', learned: true },
+{ title: 'After eating', ar: 'الْحَمْدُ لِلَّهِ', en: 'All praise is for Allah.', learned: true },
+{ title: 'Before sleeping', ar: 'بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا', en: 'In Your name, O Allah, I die and I live.', learned: false },
+{ title: 'Waking up', ar: 'الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ', en: 'Praise be to Allah who gave us life after sleep, and to Him we return.', learned: false },
+{ title: 'Leaving home', ar: 'بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ', en: 'In the name of Allah, I trust in Allah.', learned: false },
+{ title: 'Entering the bathroom', ar: 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ', en: 'O Allah, I seek Your protection from all evil.', learned: false }
+];
+return {
+duas: list.map((d, i) => ({ ...d, n: i + 1, open: this.state.open === i, closed: this.state.open !== i, toggle: () => this.setState({ open: this.state.open === i ? -1 : i }) }))
+};
+}
+}
+</script>
+</body>
+</html>

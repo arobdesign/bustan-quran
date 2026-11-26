@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bustan Qur\'an</string>
+    <string name="loading_bismillah">Bismillah… getting your lessons ready</string>
+    <string name="onboarding_title">Learn the Qur\'an through play</string>
+    <string name="onboarding_subtitle">Letters, short surahs and memorisation for ages 3 to 10. No ads, works offline.</string>
+    <string name="onboarding_choose_language">Choose the app language</string>
+    <string name="onboarding_coming_soon">Türkçe, Nederlands, اردو, Bahasa Indonesia and Melayu are coming soon.</string>
+    <string name="onboarding_get_started">Get started</string>
+    <string name="onboarding_have_account">I already have an account</string>
+    <string name="parent_gate_title">For grown-ups only</string>
+    <string name="parent_gate_subtitle">Answer to open settings, progress reports and purchases.</string>
+    <string name="parent_gate_wrong">Not quite. Here is a new question.</string>
+    <string name="parent_gate_footnote">The question is written in words so young children cannot guess it. A new one appears each time.</string>
+    <string name="main_who_is_learning">Who is learning today?</string>
+    <string name="main_add_child">Add child</string>
+    <string name="main_for_parents">For parents</string>
+    <string name="main_footnote">No ads · Works offline · Safe for kids</string>
+    <string name="tier_little_stars">Little Stars · 4</string>
+    <string name="tier_explorers">Explorers · 5</string>
+    <string name="tier_young_hafiz">Young Hafiz · 7</string>
+</resources>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Weekly report</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F4F1EA; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 12px; padding: 48px 18px 20px">
+  <div style="display: flex; align-items: center; gap: 12px">
+    <a href="ParentDashboard.dc.html" aria-label="Back" style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+    </a>
+    <div style="display: flex; flex-direction: column">
+      <h1 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-size: 23px; font-weight: 800; line-height: 1.1">Yusuf's week</h1>
+      <span style="font-size: 12px; font-weight: 700; color: #5B6661">Sample data · [week dates]</span>
+    </div>
+  </div>
+
+  <div style="background: #FFFFFF; border-radius: 20px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
+    <span style="font-size: 14px; font-weight: 800">Minutes per day</span>
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; height: 120px; gap: 8px">
+      <sc-for list="{{ days }}" as="d" hint-placeholder-count="7">
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px">
+          <span style="font-size: 11px; font-weight: 800; color: #5B6661">{{ d.v }}</span>
+          <div style="width: 100%; height: {{ d.h }}px; border-radius: 8px 8px 4px 4px; background: #0F6B5C"></div>
+          <span style="font-size: 11px; font-weight: 800">{{ d.d }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <span style="font-size: 12px; font-weight: 700; color: #5B6661">Goal: 10 minutes a day</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+    <div style="background: #FFFFFF; border-radius: 16px; padding: 12px"><span style="display: block; font-family: 'Baloo 2', sans-serif; font-size: 24px; font-weight: 800">[6]</span><span style="font-size: 12px; font-weight: 700; color: #5B6661">new ayat memorised</span></div>
+    <div style="background: #FFFFFF; border-radius: 16px; padding: 12px"><span style="display: block; font-family: 'Baloo 2', sans-serif; font-size: 24px; font-weight: 800">[14]</span><span style="font-size: 12px; font-weight: 700; color: #5B6661">review tasks done</span></div>
+  </div>
+
+  <div style="background: #FFFFFF; border-radius: 20px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
+    <span style="font-size: 14px; font-weight: 800">Highlights</span>
+    <span style="font-size: 13px; font-weight: 700">Finished Surah Quraysh, all 4 ayat</span>
+    <span style="font-size: 13px; font-weight: 700">Passed the Qalqalah tajwid lesson</span>
+    <span style="font-size: 13px; font-weight: 700; color: #8F3A1C">Al-Kawthar ayah 2 and 3 get mixed up</span>
+  </div>
+
+  <div style="background: #DCEFE9; border-radius: 20px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px">
+    <span style="font-size: 13px; font-weight: 800; color: #0A4F44">Tip for this week</span>
+    <span style="font-size: 13px; font-weight: 700; color: #0A4F44">Recite Al-Kawthar together after Maghrib. Let Yusuf finish each ayah you start.</span>
+  </div>
+  <a href="ChildRecordings.dc.html" style="min-height: 52px; border-radius: 999px; background: #0F6B5C; color: #FFFFFF; font-size: 15px; font-weight: 800; display: flex; align-items: center; justify-content: center; text-decoration: none">Listen to Yusuf's recordings</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+const v = [6, 12, 0, 9, 15, 4, 8];
+const n = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+return { days: v.map((x, i) => ({ v: x, d: n[i], h: Math.max(4, Math.round(x / 15 * 80)) })) };
+}
+}
+</script>
+</body>
+</html>

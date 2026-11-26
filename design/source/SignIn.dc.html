@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parent sign in</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0F6B5C}a:hover{color:#0A4F44}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F4F1EA; font-family: 'Nunito', sans-serif; color: #23302C; display: flex; flex-direction: column; gap: 16px; padding: 48px 20px 28px">
+  <a href="ParentGate.dc.html" aria-label="Back" style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#23302C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+  </a>
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-family: 'Baloo 2', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.15">Parent account</h1>
+    <p style="margin: 0; font-size: 15px; font-weight: 600; color: #5B6661">Keep your children's progress safe and use it on more than one device.</p>
+  </div>
+
+  <button type="button" style="min-height: 54px; border-radius: 14px; border: 2px solid #E3D8C1; background: #FFFFFF; display: flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; color: #23302C; cursor: pointer">
+    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#5B8DB8" stroke-width="3"></circle><path d="M12 12h9" stroke="#5B8DB8" stroke-width="3"></path></svg>
+    Continue with Google
+  </button>
+  <div style="display: flex; align-items: center; gap: 10px; color: #5B6661; font-size: 13px; font-weight: 700"><span style="flex: 1; height: 1px; background: #E3D8C1"></span>or with email<span style="flex: 1; height: 1px; background: #E3D8C1"></span></div>
+
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <label for="em" style="font-size: 14px; font-weight: 800">Email</label>
+    <input id="em" type="email" value="parent@example.com" style="min-height: 52px; border-radius: 14px; border: 2px solid #E3D8C1; background: #FFFFFF; padding: 0 16px; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 700; color: #23302C">
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <label for="pw" style="font-size: 14px; font-weight: 800">Password</label>
+    <input id="pw" type="password" value="password" style="min-height: 52px; border-radius: 14px; border: 2px solid #E3D8C1; background: #FFFFFF; padding: 0 16px; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 700; color: #23302C">
+    <a href="ForgotPassword.dc.html" style="align-self: flex-end; font-size: 14px; font-weight: 800; min-height: 40px; display: flex; align-items: center">Forgot password?</a>
+  </div>
+
+  <div style="flex-grow: 1"></div>
+  <a href="PrivacyConsent.dc.html" style="min-height: 56px; border-radius: 999px; background: #0F6B5C; color: #FFFFFF; font-family: 'Baloo 2', sans-serif; font-size: 20px; font-weight: 800; display: flex; align-items: center; justify-content: center; text-decoration: none">Sign in</a>
+  <a href="PrivacyConsent.dc.html" style="text-align: center; font-size: 14px; font-weight: 800; min-height: 44px; display: flex; align-items: center; justify-content: center">New here? Create an account</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>
