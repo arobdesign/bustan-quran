@@ -40,6 +40,7 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -474,23 +475,24 @@ private fun PlayerControlsRow(
 
     Row(
         modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        PlayerPill(
-            text = stringResource(R.string.player_reciter),
-            onClick = onReciterClicked,
-        )
+        Box(modifier = Modifier.weight(1f), contentAlignment = Alignment.CenterStart) {
+            PlayerPill(
+                text = stringResource(R.string.player_reciter),
+                onClick = onReciterClicked,
+            )
+        }
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(14.dp),
+            horizontalArrangement = Arrangement.spacedBy(10.dp),
         ) {
             CircleControl(
                 icon = BustanIcons.SkipBack,
                 description = stringResource(R.string.player_prev_ayah),
                 containerColor = BustanSandDeep,
                 contentColor = BustanInk,
-                size = 48.dp,
+                size = 44.dp,
                 onClick = onPrev,
             )
             Box(
@@ -516,14 +518,16 @@ private fun PlayerControlsRow(
                 description = stringResource(R.string.player_next_ayah),
                 containerColor = BustanSandDeep,
                 contentColor = BustanInk,
-                size = 48.dp,
+                size = 44.dp,
                 onClick = onNext,
             )
         }
-        PlayerPill(
-            text = stringResource(R.string.player_speed, formatSpeed(playerState.speed)),
-            onClick = { onSpeedChange(nextSpeed) },
-        )
+        Box(modifier = Modifier.weight(1f), contentAlignment = Alignment.CenterEnd) {
+            PlayerPill(
+                text = stringResource(R.string.player_speed, formatSpeed(playerState.speed)),
+                onClick = { onSpeedChange(nextSpeed) },
+            )
+        }
     }
 }
 
@@ -580,6 +584,7 @@ private fun PlayerPill(text: String, onClick: () -> Unit) {
             color = BustanInk,
             maxLines = 1,
             softWrap = false,
+            overflow = TextOverflow.Ellipsis,
         )
     }
 }

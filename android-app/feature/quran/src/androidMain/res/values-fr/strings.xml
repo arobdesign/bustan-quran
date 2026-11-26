@@ -35,7 +35,7 @@
     <string name="player_repeat_badge">Répétition %1$s sur %2$s</string>
     <string name="player_ready">Prêt</string>
     <string name="player_playing">Lecture</string>
-    <string name="player_reciter">Récitant : voix d’enfant</string>
+    <string name="player_reciter">voix d’enfant</string>
     <string name="player_speed">%1$s×</string>
     <string name="player_prev_ayah">Verset précédent</string>
     <string name="player_next_ayah">Verset suivant</string>

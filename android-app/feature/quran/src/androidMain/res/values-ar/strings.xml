@@ -35,7 +35,7 @@
     <string name="player_repeat_badge">التكرار %1$s من %2$s</string>
     <string name="player_ready">جاهز</string>
     <string name="player_playing">يُشغّل</string>
-    <string name="player_reciter">القارئ: صوت طفل</string>
+    <string name="player_reciter">صوت طفل</string>
     <string name="player_speed">%1$s×</string>
     <string name="player_prev_ayah">الآية السابقة</string>
     <string name="player_next_ayah">الآية التالية</string>

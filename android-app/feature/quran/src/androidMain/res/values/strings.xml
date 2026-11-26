@@ -36,7 +36,7 @@
     <string name="player_repeat_badge">Repeat %1$s of %2$s</string>
     <string name="player_ready">Ready</string>
     <string name="player_playing">Playing</string>
-    <string name="player_reciter">Reciter: Child voice</string>
+    <string name="player_reciter">Child voice</string>
     <string name="player_speed">%1$s×</string>
     <string name="player_prev_ayah">Previous ayah</string>
     <string name="player_next_ayah">Next ayah</string>
