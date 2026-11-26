@@ -24,4 +24,21 @@ Aplikasi Android & iOS (satu kode Kotlin Multiplatform) offline-first untuk anak
 - Desain UI 71 layar: https://claude.ai/artifact/3Go3zN69CsHLcX8fqBoSXd
 - Spesifikasi produk: https://claude.ai/artifact/GQtUvAtApU3i2NSayDW6S2
 
-Catatan: file di folder ini adalah salinan per 25 Nov 2026 (versi Android & iOS). Bila PRD online diubah, ekspor ulang.
+Catatan: file dokumen di folder ini adalah salinan per 25 Nov 2026 (versi Android & iOS). Bila PRD online diubah, ekspor ulang.
+
+## Struktur & cara jalan
+
+| Folder | Isi |
+| --- | --- |
+| `android-app/` | Aplikasi Kotlin Multiplatform (Compose + Room + Koin + Media3). Modul: `app`, `shared`, `core/{ui,data,audio,testing}`, `feature/{onboarding,quran,hafalan,islamic,games,parent,billing}`, `build-logic`, `tools/content-import` |
+| `android-app/core/data/src/androidMain/assets/content.db` | Aset Room (`createFromAsset`) berisi teks Qur'an, terjemahan, dan `meta.audio_template` |
+| `android-app/tools/scripts/fetch_quran_content.py` | Skrip impor konten dari eQuran.id API v2 (lihat `tools/scripts/README.md`) |
+| `design/`, `assets/` | Ekspor desain & diagram |
+| `supabase/` | Edge functions (verify-purchase, rtdn-webhook) |
+
+```bash
+cd android-app
+./gradlew testDebugUnitTest        # unit test (JVM)
+./gradlew :app:assembleDebug       # APK debug
+python3 tools/scripts/fetch_quran_content.py   # regenerasi content.db dari API
+```
