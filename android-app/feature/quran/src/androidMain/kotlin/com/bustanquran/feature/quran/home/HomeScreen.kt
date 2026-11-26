@@ -384,7 +384,12 @@ private fun AdventureMap(
                 .graphicsLayer {
                     scaleX = scale
                     scaleY = scale
-                    transformOrigin = TransformOrigin(0f, 0f)
+                    // Pivot on the top edge's midpoint: scaling keeps the board
+                    // horizontally centred on screen while still growing downward
+                    // from the top, which is what keeps the last island clear of
+                    // the bottom bar. A (0, 0) pivot pinned the whole map to the
+                    // left edge and left a wide empty gutter on the right.
+                    transformOrigin = TransformOrigin(0.5f, 0f)
                 },
         ) {
             Canvas(modifier = Modifier.fillMaxSize()) {
